@@ -1,0 +1,20 @@
+{
+  "name": "gennai-package",
+  "author": "Guilherme Cândido ()",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "keywords": [
+    "digimon",
+    "graphql",
+    "api",
+    "gennai"
+  ],
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  }
+}
