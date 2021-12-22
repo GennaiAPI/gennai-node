@@ -1,9 +1,16 @@
 {
   "name": "gennai-package",
-  "author": "Guilherme Cândido ()",
-  "version": "1.0.0",
-  "main": "index.js",
+  "author": "Guilherme Cândido",
+  "version": "0.0.4",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "license": "MIT",
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "files": [
+    "./lib/**/*"
+  ],
   "keywords": [
     "digimon",
     "graphql",
@@ -12,9 +19,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/GuiPretto/gennai-node"
   },
   "devDependencies": {
     "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "pokedex-promise-v2": "^4.0.0"
   }
 }
