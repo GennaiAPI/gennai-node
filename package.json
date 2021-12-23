@@ -4,6 +4,7 @@
   "version": "0.0.7",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
+  "type": "module",
   "license": "MIT",
   "scripts": {
     "tsc": "tsc"
@@ -22,9 +23,10 @@
     "url": "https://github.com/GuiPretto/gennai-node"
   },
   "devDependencies": {
+    "@types/node": "^17.0.2",
     "typescript": "^4.5.4"
   },
   "dependencies": {
-    "pokedex-promise-v2": "^4.0.0"
+    "axios": "^0.24.0"
   }
 }
