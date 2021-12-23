@@ -1,8 +1,9 @@
-import { GetRankById, GetRankByName, GetRanks, rankSchema } from "./interfaces";
+import { OptionsProps, rankSchema } from "./interfaces";
 
 import api from "../../api";
+import { digimonSchema } from "../digimon/interfaces";
 
-export const getRanks = ({ options }: GetRanks) =>
+export const getRanks = (options?: OptionsProps) =>
   api({
     operationName: "GetRanks",
     query: `query GetRanks {  
@@ -15,12 +16,15 @@ export const getRanks = ({ options }: GetRanks) =>
     },
   });
 
-export const getRankById = ({ id }: GetRankById) =>
+export const getRankById = (id: number) =>
   api({
     operationName: "GetRankById",
     query: `query GetRankById($getRankByIdId: Int!) {  
       getRankById(id: $getRankByIdId) {
         ${rankSchema}
+        digimons {
+          ${digimonSchema}
+        }
       }
     }`,
     variables: {
@@ -28,12 +32,15 @@ export const getRankById = ({ id }: GetRankById) =>
     },
   });
 
-export const getRankByName = ({ name }: GetRankByName) =>
+export const getRankByName = (name: string) =>
   api({
     operationName: "GetRankByName",
     query: `query GetRankByName($getRankByNameName: String!) {  
       getRankByName(name: $getRankByNameName) {
         ${rankSchema}
+        digimons {
+          ${digimonSchema}
+        }
       }
     }`,
     variables: {

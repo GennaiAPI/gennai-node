@@ -1,0 +1,13 @@
+export const episodeSchema = `
+  id
+  title
+  synopsis
+  originalAirDate
+`;
+
+export interface OptionsProps {
+  offset: number;
+  limit: number;
+  order: string;
+  orderBy: "id" | "title" | "synopsis" | "originalAirDate";
+}

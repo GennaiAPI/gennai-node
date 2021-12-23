@@ -1,4 +1,4 @@
-export const rankSchema = `
+export const crestSchema = `
   id
   name
   description

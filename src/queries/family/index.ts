@@ -1,13 +1,9 @@
-import {
-  GetFamilies,
-  GetFamilyById,
-  GetFamilyByName,
-  familySchema,
-} from "./interfaces";
+import { OptionsProps, familySchema } from "./interfaces";
 
 import api from "../../api";
+import { digimonSchema } from "../digimon/interfaces";
 
-export const getFamilies = ({ options }: GetFamilies) =>
+export const getFamilies = (options?: OptionsProps) =>
   api({
     operationName: "GetFamilies",
     query: `query GetFamilies {  
@@ -20,12 +16,15 @@ export const getFamilies = ({ options }: GetFamilies) =>
     },
   });
 
-export const getFamilyById = ({ id }: GetFamilyById) =>
+export const getFamilyById = (id: number) =>
   api({
     operationName: "GetFamilyById",
     query: `query GetFamilyById($getFamilyByIdId: Int!) {  
       getFamilyById(id: $getFamilyByIdId) {
         ${familySchema}
+        digimons {
+          ${digimonSchema}
+        }
       }
     }`,
     variables: {
@@ -33,12 +32,15 @@ export const getFamilyById = ({ id }: GetFamilyById) =>
     },
   });
 
-export const getFamilyByName = ({ name }: GetFamilyByName) =>
+export const getFamilyByName = (name: string) =>
   api({
     operationName: "GetFamilyByName",
     query: `query GetFamilyByName($getFamilyByNameName: String!) {  
       getFamilyByName(name: $getFamilyByNameName) {
         ${familySchema}
+        digimons {
+          ${digimonSchema}
+        }
       }
     }`,
     variables: {

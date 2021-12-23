@@ -1,4 +1,4 @@
-export const rankSchema = `
+export const digimentalSchema = `
   id
   name
   description
