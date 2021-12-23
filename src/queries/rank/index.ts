@@ -1,12 +1,8 @@
+import { GetRankById, GetRankByName, GetRanks, rankSchema } from "./interfaces";
+
 import api from "src/api";
 
-const rankSchema = `
-  id
-  name
-  description
-`;
-
-export const getRanks = () =>
+export const getRanks = ({ options }: GetRanks) =>
   api({
     operationName: "GetRanks",
     query: `query GetRanks {  
@@ -14,10 +10,12 @@ export const getRanks = () =>
         ${rankSchema}
       }
     }`,
-    variables: {},
+    variables: {
+      options: options,
+    },
   });
 
-export const getRankById = (id: number) =>
+export const getRankById = ({ id }: GetRankById) =>
   api({
     operationName: "GetRankById",
     query: `query GetRankById($getRankByIdId: Int!) {  
@@ -30,7 +28,7 @@ export const getRankById = (id: number) =>
     },
   });
 
-export const getRankByName = (name: string) =>
+export const getRankByName = ({ name }: GetRankByName) =>
   api({
     operationName: "GetRankByName",
     query: `query GetRankByName($getRankByNameName: String!) {  

@@ -1,13 +1,13 @@
+import {
+  GetFamilies,
+  GetFamilyById,
+  GetFamilyByName,
+  familySchema,
+} from "./interfaces";
+
 import api from "src/api";
 
-const familySchema = `
-  id
-  name
-  symbol
-  description
-`;
-
-export const getFamilies = () =>
+export const getFamilies = ({ options }: GetFamilies) =>
   api({
     operationName: "GetFamilies",
     query: `query GetFamilies {  
@@ -15,10 +15,12 @@ export const getFamilies = () =>
         ${familySchema}
       }
     }`,
-    variables: {},
+    variables: {
+      options: options,
+    },
   });
 
-export const getFamilyById = (id: number) =>
+export const getFamilyById = ({ id }: GetFamilyById) =>
   api({
     operationName: "GetFamilyById",
     query: `query GetFamilyById($getFamilyByIdId: Int!) {  
@@ -31,7 +33,7 @@ export const getFamilyById = (id: number) =>
     },
   });
 
-export const getFamilyByName = (name: string) =>
+export const getFamilyByName = ({ name }: GetFamilyByName) =>
   api({
     operationName: "GetFamilyByName",
     query: `query GetFamilyByName($getFamilyByNameName: String!) {  
