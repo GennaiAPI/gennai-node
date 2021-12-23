@@ -1,6 +1,6 @@
 import { GetRankById, GetRankByName, GetRanks, rankSchema } from "./interfaces";
 
-import api from "src/api";
+import api from "../../api";
 
 export const getRanks = ({ options }: GetRanks) =>
   api({

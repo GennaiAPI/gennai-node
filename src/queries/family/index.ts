@@ -5,7 +5,7 @@ import {
   familySchema,
 } from "./interfaces";
 
-import api from "src/api";
+import api from "../../api";
 
 export const getFamilies = ({ options }: GetFamilies) =>
   api({
