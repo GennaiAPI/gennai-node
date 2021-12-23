@@ -12,7 +12,7 @@ export interface OptionsProps {
 }
 
 export interface GetRanks {
-  options: OptionsProps;
+  options?: OptionsProps;
 }
 
 export interface GetRankById {

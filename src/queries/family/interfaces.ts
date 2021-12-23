@@ -13,7 +13,7 @@ export interface OptionsProps {
 }
 
 export interface GetFamilies {
-  options: OptionsProps;
+  options?: OptionsProps;
 }
 
 export interface GetFamilyById {
