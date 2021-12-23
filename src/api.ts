@@ -22,10 +22,10 @@ const api = async (data: ApiProps) => {
     if (res.status === 200) {
       return res.data;
     } else {
-      throw new Error("asdas");
+      throw new Error(`Ocorreu um erro com este código: ${res.status}`);
     }
   } catch (error) {
-    return "Ocorreu um erro";
+    return error;
   }
 };
 
