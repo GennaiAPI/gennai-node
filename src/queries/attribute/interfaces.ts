@@ -25,8 +25,8 @@ export interface AttributeFullProps {
 }
 
 export interface OptionsProps {
-  offset: number;
-  limit: number;
-  order: string;
-  orderBy: "id" | "name" | "symbol" | "description";
+  offset?: number;
+  limit?: number;
+  order?: string;
+  orderBy?: "id" | "name" | "symbol" | "description";
 }

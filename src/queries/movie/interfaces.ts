@@ -29,8 +29,8 @@ export interface MovieFullProps {
 }
 
 export interface OptionsProps {
-  offset: number;
-  limit: number;
-  order: string;
-  orderBy: "id" | "title" | "synopsis" | "originalAirDate";
+  offset?: number;
+  limit?: number;
+  order?: string;
+  orderBy?: "id" | "title" | "synopsis" | "originalAirDate";
 }

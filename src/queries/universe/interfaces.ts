@@ -21,8 +21,8 @@ export interface UniverseFullProps {
 }
 
 export interface OptionsProps {
-  offset: number;
-  limit: number;
-  order: string;
-  orderBy: "id" | "name";
+  offset?: number;
+  limit?: number;
+  order?: string;
+  orderBy?: "id" | "name";
 }

@@ -24,8 +24,8 @@ export interface DigimentalFullProps {
 }
 
 export interface OptionsProps {
-  offset: number;
-  limit: number;
-  order: string;
-  orderBy: "id" | "name" | "description";
+  offset?: number;
+  limit?: number;
+  order?: string;
+  orderBy?: "id" | "name" | "description";
 }
