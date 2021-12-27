@@ -1,4 +1,4 @@
-import { OptionsProps, digimonSchema } from "./interfaces";
+import { DigimonProps, OptionsProps, digimonSchema } from "./interfaces";
 
 import { animeSchema } from "../anime/interfaces";
 import api from "../../api";
@@ -10,7 +10,7 @@ import { familySchema } from "../family/interfaces";
 import { movieSchema } from "../movie/interfaces";
 import { rankSchema } from "../rank/interfaces";
 
-export const getDigimons = (options?: OptionsProps) =>
+export const getDigimons = (options?: OptionsProps): Promise<DigimonProps[]> =>
   api({
     operationName: "GetDigimons",
     query: `query GetDigimons {  
@@ -23,7 +23,7 @@ export const getDigimons = (options?: OptionsProps) =>
     },
   });
 
-export const getDigimonById = (id: number) =>
+export const getDigimonById = (id: number): Promise<DigimonProps> =>
   api({
     operationName: "GetDigimonById",
     query: `query GetDigimonById($getDigimonByIdId: Int!) {  
@@ -66,7 +66,7 @@ export const getDigimonById = (id: number) =>
     },
   });
 
-export const getDigimonByName = (name: string) =>
+export const getDigimonByName = (name: string): Promise<DigimonProps> =>
   api({
     operationName: "GetDigimonByName",
     query: `query GetDigimonByName($getDigimonByNameName: String!) {  

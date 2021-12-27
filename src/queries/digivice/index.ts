@@ -1,11 +1,18 @@
-import { DigiviceType, OptionsProps, digiviceSchema } from "./interfaces";
+import {
+  DigiviceProps,
+  DigiviceType,
+  OptionsProps,
+  digiviceSchema,
+} from "./interfaces";
 
 import { animeSchema } from "../anime/interfaces";
 import api from "../../api";
 import { characterSchema } from "../character/interfaces";
 import { movieSchema } from "../movie/interfaces";
 
-export const getDigivices = (options?: OptionsProps) =>
+export const getDigivices = (
+  options?: OptionsProps
+): Promise<DigiviceProps[]> =>
   api({
     operationName: "GetDigivices",
     query: `query GetDigivices {  
@@ -18,7 +25,7 @@ export const getDigivices = (options?: OptionsProps) =>
     },
   });
 
-export const getDigiviceById = (id: number) =>
+export const getDigiviceById = (id: number): Promise<DigiviceProps> =>
   api({
     operationName: "GetDigiviceById",
     query: `query GetDigiviceById($getDigiviceByIdId: Int!) {  
@@ -43,7 +50,7 @@ export const getDigiviceById = (id: number) =>
 export const getDigivicesByType = (
   type: DigiviceType,
   options?: OptionsProps
-) =>
+): Promise<DigiviceProps[]> =>
   api({
     operationName: "GetDigivicesByType",
     query: `query GetDigivicesByType($getDigivicesByTypeType: DigiviceType!) {  
@@ -66,7 +73,7 @@ export const getDigivicesByType = (
     },
   });
 
-export const getDigiviceTypes = () =>
+export const getDigiviceTypes = (): Promise<DigiviceType[]> =>
   api({
     operationName: "GetDigiviceTypes",
     query: `query GetDigiviceTypes {  

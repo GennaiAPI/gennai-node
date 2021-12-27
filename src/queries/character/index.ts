@@ -1,4 +1,4 @@
-import { OptionsProps, characterSchema } from "./interfaces";
+import { CharacterProps, OptionsProps, characterSchema } from "./interfaces";
 
 import { animeSchema } from "../anime/interfaces";
 import api from "../../api";
@@ -9,7 +9,9 @@ import { episodeSchema } from "../episode/interfaces";
 import { movieSchema } from "../movie/interfaces";
 import { universeSchema } from "../universe/interfaces";
 
-export const getCharacters = (options?: OptionsProps) =>
+export const getCharacters = (
+  options?: OptionsProps
+): Promise<CharacterProps[]> =>
   api({
     operationName: "GetCharacters",
     query: `query GetCharacters {  
@@ -22,7 +24,7 @@ export const getCharacters = (options?: OptionsProps) =>
     },
   });
 
-export const getCharacterById = (id: number) =>
+export const getCharacterById = (id: number): Promise<CharacterProps> =>
   api({
     operationName: "GetCharacterById",
     query: `query GetCharacterById($getCharacterByIdId: Int!) {  
@@ -56,7 +58,7 @@ export const getCharacterById = (id: number) =>
     },
   });
 
-export const getCharacterByName = (name: string) =>
+export const getCharacterByName = (name: string): Promise<CharacterProps> =>
   api({
     operationName: "GetCharacterByName",
     query: `query GetCharacterByName($getCharacterByNameName: String!) {  

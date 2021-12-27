@@ -1,11 +1,13 @@
-import { OptionsProps, universeSchema } from "./interfaces";
+import { OptionsProps, UniverseProps, universeSchema } from "./interfaces";
 
 import { animeSchema } from "../anime/interfaces";
 import api from "../../api";
 import { characterSchema } from "../character/interfaces";
 import { movieSchema } from "../movie/interfaces";
 
-export const getUniverses = (options?: OptionsProps) =>
+export const getUniverses = (
+  options?: OptionsProps
+): Promise<UniverseProps[]> =>
   api({
     operationName: "GetUniverses",
     query: `query GetUniverses {  
@@ -18,7 +20,7 @@ export const getUniverses = (options?: OptionsProps) =>
     },
   });
 
-export const getUniverseById = (id: number) =>
+export const getUniverseById = (id: number): Promise<UniverseProps> =>
   api({
     operationName: "GetUniverseById",
     query: `query GetUniverseById($getUniverseByIdId: Int!) {  
@@ -40,7 +42,7 @@ export const getUniverseById = (id: number) =>
     },
   });
 
-export const getUniverseByName = (name: string) =>
+export const getUniverseByName = (name: string): Promise<UniverseProps> =>
   api({
     operationName: "GetUniverseByName",
     query: `query GetUniverseByName($getUniverseByNameName: String!) {  

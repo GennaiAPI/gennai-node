@@ -1,11 +1,11 @@
-import { OptionsProps, episodeSchema } from "./interfaces";
+import { EpisodeProps, OptionsProps, episodeSchema } from "./interfaces";
 
 import { animeSchema } from "../anime/interfaces";
 import api from "../../api";
 import { characterSchema } from "../character/interfaces";
 import { digimonSchema } from "../digimon/interfaces";
 
-export const getEpisodes = (options?: OptionsProps) =>
+export const getEpisodes = (options?: OptionsProps): Promise<EpisodeProps[]> =>
   api({
     operationName: "GetEpisodes",
     query: `query GetEpisodes {  
@@ -18,7 +18,7 @@ export const getEpisodes = (options?: OptionsProps) =>
     },
   });
 
-export const getEpisodeById = (id: number) =>
+export const getEpisodeById = (id: number): Promise<EpisodeProps> =>
   api({
     operationName: "GetEpisodeById",
     query: `query GetEpisodeById($getEpisodeByIdId: Int!) {  
@@ -40,7 +40,7 @@ export const getEpisodeById = (id: number) =>
     },
   });
 
-export const getEpisodeByTitle = (title: string) =>
+export const getEpisodeByTitle = (title: string): Promise<EpisodeProps> =>
   api({
     operationName: "GetEpisodeByTitle",
     query: `query GetEpisodeByTitle($getEpisodeByTitleTitle: String!) {  

@@ -1,9 +1,11 @@
-import { OptionsProps, attributeSchema } from "./interfaces";
+import { AttributeProps, OptionsProps, attributeSchema } from "./interfaces";
 
 import api from "../../api";
 import { digimonSchema } from "../digimon/interfaces";
 
-export const getAttributes = (options?: OptionsProps) =>
+export const getAttributes = (
+  options?: OptionsProps
+): Promise<AttributeProps[]> =>
   api({
     operationName: "GetAttributes",
     query: `query GetAttributes {  
@@ -16,7 +18,7 @@ export const getAttributes = (options?: OptionsProps) =>
     },
   });
 
-export const getAttributeById = (id: number) =>
+export const getAttributeById = (id: number): Promise<AttributeProps> =>
   api({
     operationName: "GetAttributeById",
     query: `query GetAttributeById($getAttributeByIdId: Int!) {  
@@ -38,7 +40,7 @@ export const getAttributeById = (id: number) =>
     },
   });
 
-export const getAttributeByName = (name: string) =>
+export const getAttributeByName = (name: string): Promise<AttributeProps> =>
   api({
     operationName: "GetAttributeByName",
     query: `query GetAttributeByName($getAttributeByNameName: String!) {  

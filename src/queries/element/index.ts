@@ -1,9 +1,9 @@
-import { OptionsProps, elementSchema } from "./interfaces";
+import { ElementProps, OptionsProps, elementSchema } from "./interfaces";
 
 import api from "../../api";
 import { digimonSchema } from "../digimon/interfaces";
 
-export const getElements = (options?: OptionsProps) =>
+export const getElements = (options?: OptionsProps): Promise<ElementProps[]> =>
   api({
     operationName: "GetElements",
     query: `query GetElements {  
@@ -16,7 +16,7 @@ export const getElements = (options?: OptionsProps) =>
     },
   });
 
-export const getElementById = (id: number) =>
+export const getElementById = (id: number): Promise<ElementProps> =>
   api({
     operationName: "GetElementById",
     query: `query GetElementById($getElementByIdId: Int!) {  
@@ -38,7 +38,7 @@ export const getElementById = (id: number) =>
     },
   });
 
-export const getElementByName = (name: string) =>
+export const getElementByName = (name: string): Promise<ElementProps> =>
   api({
     operationName: "GetElementByName",
     query: `query GetElementByName($getElementByNameName: String!) {  
