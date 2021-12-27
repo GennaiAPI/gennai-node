@@ -1,6 +1,6 @@
-import { CharacterProps } from "../character/interfaces";
-import { CrestProps } from "../crest/interfaces";
-import { DigimonProps } from "../digimon/interfaces";
+import { CharacterBasicProps } from "../character/interfaces";
+import { CrestBasicProps } from "../crest/interfaces";
+import { DigimonBasicProps } from "../digimon/interfaces";
 
 export const digimentalSchema = `
   id
@@ -8,13 +8,19 @@ export const digimentalSchema = `
   description
 `;
 
-export interface DigimentalProps {
+export interface DigimentalBasicProps {
   id: number;
   name: string;
   description: string;
-  digiDestined: CharacterProps;
-  digimons: DigimonProps[];
-  crest: CrestProps;
+}
+
+export interface DigimentalFullProps {
+  id: number;
+  name: string;
+  description: string;
+  digiDestined: CharacterBasicProps;
+  digimons: DigimonBasicProps[];
+  crest: CrestBasicProps;
 }
 
 export interface OptionsProps {

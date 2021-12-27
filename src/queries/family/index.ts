@@ -1,9 +1,16 @@
-import { FamilyProps, OptionsProps, familySchema } from "./interfaces";
+import {
+  FamilyBasicProps,
+  FamilyFullProps,
+  OptionsProps,
+  familySchema,
+} from "./interfaces";
 
 import api from "../../api";
 import { digimonSchema } from "../digimon/interfaces";
 
-export const getFamilies = (options?: OptionsProps): Promise<FamilyProps[]> =>
+export const getFamilies = (
+  options?: OptionsProps
+): Promise<FamilyBasicProps[]> =>
   api({
     operationName: "GetFamilies",
     query: `query GetFamilies {  
@@ -16,7 +23,7 @@ export const getFamilies = (options?: OptionsProps): Promise<FamilyProps[]> =>
     },
   });
 
-export const getFamilyById = (id: number): Promise<FamilyProps> =>
+export const getFamilyById = (id: number): Promise<FamilyFullProps> =>
   api({
     operationName: "GetFamilyById",
     query: `query GetFamilyById($getFamilyByIdId: Int!) {  
@@ -32,7 +39,7 @@ export const getFamilyById = (id: number): Promise<FamilyProps> =>
     },
   });
 
-export const getFamilyByName = (name: string): Promise<FamilyProps> =>
+export const getFamilyByName = (name: string): Promise<FamilyFullProps> =>
   api({
     operationName: "GetFamilyByName",
     query: `query GetFamilyByName($getFamilyByNameName: String!) {  

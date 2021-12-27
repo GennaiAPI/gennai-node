@@ -1,6 +1,6 @@
-import { AnimeProps } from "../anime/interfaces";
-import { CharacterProps } from "../character/interfaces";
-import { DigimonProps } from "../digimon/interfaces";
+import { AnimeBasicProps } from "../anime/interfaces";
+import { CharacterBasicProps } from "../character/interfaces";
+import { DigimonBasicProps } from "../digimon/interfaces";
 
 export const episodeSchema = `
   id
@@ -9,14 +9,21 @@ export const episodeSchema = `
   originalAirDate
 `;
 
-export interface EpisodeProps {
+export interface EpisodeBasicProps {
   id: number;
   title: string;
   synopsis: string;
   originalAirDate: Date;
-  anime: AnimeProps;
-  characters: CharacterProps[];
-  digimons: DigimonProps[];
+}
+
+export interface EpisodeFullProps {
+  id: number;
+  title: string;
+  synopsis: string;
+  originalAirDate: Date;
+  anime: AnimeBasicProps;
+  characters: CharacterBasicProps[];
+  digimons: DigimonBasicProps[];
 }
 
 export interface OptionsProps {

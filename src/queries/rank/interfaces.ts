@@ -1,4 +1,4 @@
-import { DigimonProps } from "../digimon/interfaces";
+import { DigimonBasicProps } from "../digimon/interfaces";
 
 export const rankSchema = `
   id
@@ -6,11 +6,17 @@ export const rankSchema = `
   description
 `;
 
-export interface RankProps {
+export interface RankBasicProps {
   id: number;
   name: string;
   description: string;
-  digimons: DigimonProps[];
+}
+
+export interface RankFullProps {
+  id: number;
+  name: string;
+  description: string;
+  digimons: DigimonBasicProps[];
 }
 
 export interface OptionsProps {

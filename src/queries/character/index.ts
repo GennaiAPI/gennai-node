@@ -1,4 +1,9 @@
-import { CharacterProps, OptionsProps, characterSchema } from "./interfaces";
+import {
+  CharacterBasicProps,
+  CharacterFullProps,
+  OptionsProps,
+  characterSchema,
+} from "./interfaces";
 
 import { animeSchema } from "../anime/interfaces";
 import api from "../../api";
@@ -11,7 +16,7 @@ import { universeSchema } from "../universe/interfaces";
 
 export const getCharacters = (
   options?: OptionsProps
-): Promise<CharacterProps[]> =>
+): Promise<CharacterBasicProps[]> =>
   api({
     operationName: "GetCharacters",
     query: `query GetCharacters {  
@@ -24,7 +29,7 @@ export const getCharacters = (
     },
   });
 
-export const getCharacterById = (id: number): Promise<CharacterProps> =>
+export const getCharacterById = (id: number): Promise<CharacterFullProps> =>
   api({
     operationName: "GetCharacterById",
     query: `query GetCharacterById($getCharacterByIdId: Int!) {  
@@ -58,7 +63,7 @@ export const getCharacterById = (id: number): Promise<CharacterProps> =>
     },
   });
 
-export const getCharacterByName = (name: string): Promise<CharacterProps> =>
+export const getCharacterByName = (name: string): Promise<CharacterFullProps> =>
   api({
     operationName: "GetCharacterByName",
     query: `query GetCharacterByName($getCharacterByNameName: String!) {  

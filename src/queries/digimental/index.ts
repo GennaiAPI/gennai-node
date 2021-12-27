@@ -1,4 +1,9 @@
-import { DigimentalProps, OptionsProps, digimentalSchema } from "./interfaces";
+import {
+  DigimentalBasicProps,
+  DigimentalFullProps,
+  OptionsProps,
+  digimentalSchema,
+} from "./interfaces";
 
 import api from "../../api";
 import { characterSchema } from "../character/interfaces";
@@ -7,7 +12,7 @@ import { digimonSchema } from "../digimon/interfaces";
 
 export const getDigimentals = (
   options?: OptionsProps
-): Promise<DigimentalProps[]> =>
+): Promise<DigimentalBasicProps[]> =>
   api({
     operationName: "GetDigimentals",
     query: `query GetDigimentals {  
@@ -20,7 +25,7 @@ export const getDigimentals = (
     },
   });
 
-export const getDigimentalById = (id: number): Promise<DigimentalProps> =>
+export const getDigimentalById = (id: number): Promise<DigimentalFullProps> =>
   api({
     operationName: "GetDigimentalById",
     query: `query GetDigimentalById($getDigimentalByIdId: Int!) {  
@@ -42,7 +47,9 @@ export const getDigimentalById = (id: number): Promise<DigimentalProps> =>
     },
   });
 
-export const getDigimentalByName = (name: string): Promise<DigimentalProps> =>
+export const getDigimentalByName = (
+  name: string
+): Promise<DigimentalFullProps> =>
   api({
     operationName: "GetDigimentalByName",
     query: `query GetDigimentalByName($getDigimentalByNameName: String!) {  

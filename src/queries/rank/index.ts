@@ -1,9 +1,14 @@
-import { OptionsProps, RankProps, rankSchema } from "./interfaces";
+import {
+  OptionsProps,
+  RankBasicProps,
+  RankFullProps,
+  rankSchema,
+} from "./interfaces";
 
 import api from "../../api";
 import { digimonSchema } from "../digimon/interfaces";
 
-export const getRanks = (options?: OptionsProps): Promise<RankProps[]> =>
+export const getRanks = (options?: OptionsProps): Promise<RankBasicProps[]> =>
   api({
     operationName: "GetRanks",
     query: `query GetRanks {  
@@ -16,7 +21,7 @@ export const getRanks = (options?: OptionsProps): Promise<RankProps[]> =>
     },
   });
 
-export const getRankById = (id: number): Promise<RankProps> =>
+export const getRankById = (id: number): Promise<RankFullProps> =>
   api({
     operationName: "GetRankById",
     query: `query GetRankById($getRankByIdId: Int!) {  
@@ -32,7 +37,7 @@ export const getRankById = (id: number): Promise<RankProps> =>
     },
   });
 
-export const getRankByName = (name: string): Promise<RankProps> =>
+export const getRankByName = (name: string): Promise<RankFullProps> =>
   api({
     operationName: "GetRankByName",
     query: `query GetRankByName($getRankByNameName: String!) {  

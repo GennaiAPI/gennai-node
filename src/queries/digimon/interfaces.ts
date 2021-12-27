@@ -1,30 +1,34 @@
-import { AnimeProps } from "../anime/interfaces";
-import { AttributeProps } from "../attribute/interfaces";
-import { DigimentalProps } from "../digimental/interfaces";
-import { ElementProps } from "../element/interfaces";
-import { EpisodeProps } from "../episode/interfaces";
-import { FamilyProps } from "../family/interfaces";
-import { MovieProps } from "../movie/interfaces";
-import { RankProps } from "../rank/interfaces";
+import { AnimeBasicProps } from "../anime/interfaces";
+import { AttributeBasicProps } from "../attribute/interfaces";
+import { DigimentalBasicProps } from "../digimental/interfaces";
+import { ElementBasicProps } from "../element/interfaces";
+import { EpisodeBasicProps } from "../episode/interfaces";
+import { FamilyBasicProps } from "../family/interfaces";
+import { MovieBasicProps } from "../movie/interfaces";
+import { RankBasicProps } from "../rank/interfaces";
 
 export const digimonSchema = `
   id
   name
 `;
 
-export interface DigimonProps {
+export interface DigimonBasicProps {
   id: number;
   name: string;
-  prior: DigimonProps[];
-  next: DigimonProps[];
-  rank: RankProps;
-  attribute: AttributeProps;
-  families: FamilyProps[];
-  element: ElementProps;
-  animes: AnimeProps[];
-  episodes: EpisodeProps[];
-  movies: MovieProps[];
-  digimental: DigimentalProps;
+}
+export interface DigimonFullProps {
+  id: number;
+  name: string;
+  prior: DigimonBasicProps[];
+  next: DigimonBasicProps[];
+  rank: RankBasicProps;
+  attribute: AttributeBasicProps;
+  families: FamilyBasicProps[];
+  element: ElementBasicProps;
+  animes: AnimeBasicProps[];
+  episodes: EpisodeBasicProps[];
+  movies: MovieBasicProps[];
+  digimental: DigimentalBasicProps;
 }
 
 export interface OptionsProps {

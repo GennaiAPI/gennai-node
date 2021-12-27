@@ -1,4 +1,9 @@
-import { AnimeProps, OptionsProps, animeSchema } from "./interfaces";
+import {
+  AnimeBasicProps,
+  AnimeFullProps,
+  OptionsProps,
+  animeSchema,
+} from "./interfaces";
 
 import api from "../../api";
 import { characterSchema } from "../character/interfaces";
@@ -8,7 +13,7 @@ import { digiviceSchema } from "../digivice/interfaces";
 import { episodeSchema } from "../episode/interfaces";
 import { universeSchema } from "../universe/interfaces";
 
-export const getAnimes = (options?: OptionsProps): Promise<AnimeProps[]> =>
+export const getAnimes = (options?: OptionsProps): Promise<AnimeBasicProps[]> =>
   api({
     operationName: "GetAnimes",
     query: `query GetAnimes {  
@@ -21,7 +26,7 @@ export const getAnimes = (options?: OptionsProps): Promise<AnimeProps[]> =>
     },
   });
 
-export const getAnimeById = (id: number): Promise<AnimeProps> =>
+export const getAnimeById = (id: number): Promise<AnimeFullProps> =>
   api({
     operationName: "GetAnimeById",
     query: `query GetAnimeById($getAnimeByIdId: Int!) {  
@@ -52,7 +57,7 @@ export const getAnimeById = (id: number): Promise<AnimeProps> =>
     },
   });
 
-export const getAnimeByTitle = (title: string): Promise<AnimeProps> =>
+export const getAnimeByTitle = (title: string): Promise<AnimeFullProps> =>
   api({
     operationName: "GetAnimeByTitle",
     query: `query GetAnimeByTitle($getAnimeByTitleTitle: String!) {  

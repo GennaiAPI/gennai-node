@@ -1,7 +1,7 @@
-import { CharacterProps } from "../character/interfaces";
-import { DigimonProps } from "../digimon/interfaces";
-import { DigiviceProps } from "../digivice/interfaces";
-import { UniverseProps } from "../universe/interfaces";
+import { CharacterBasicProps } from "../character/interfaces";
+import { DigimonBasicProps } from "../digimon/interfaces";
+import { DigiviceBasicProps } from "../digivice/interfaces";
+import { UniverseBasicProps } from "../universe/interfaces";
 
 export const movieSchema = `
   id
@@ -10,15 +10,22 @@ export const movieSchema = `
   originalAirDate
 `;
 
-export interface MovieProps {
+export interface MovieBasicProps {
   id: number;
   title: string;
   synopsis: string;
   originalAirDate: Date;
-  universe: UniverseProps;
-  characters: CharacterProps[];
-  digimons: DigimonProps[];
-  digivices: DigiviceProps[];
+}
+
+export interface MovieFullProps {
+  id: number;
+  title: string;
+  synopsis: string;
+  originalAirDate: Date;
+  universe: UniverseBasicProps;
+  characters: CharacterBasicProps[];
+  digimons: DigimonBasicProps[];
+  digivices: DigiviceBasicProps[];
 }
 
 export interface OptionsProps {

@@ -1,18 +1,23 @@
-import { AnimeProps } from "../anime/interfaces";
-import { CharacterProps } from "../character/interfaces";
-import { MovieProps } from "../movie/interfaces";
+import { AnimeBasicProps } from "../anime/interfaces";
+import { CharacterBasicProps } from "../character/interfaces";
+import { MovieBasicProps } from "../movie/interfaces";
 
 export const universeSchema = `
   id
   name
 `;
 
-export interface UniverseProps {
+export interface UniverseBasicProps {
   id: number;
   name: string;
-  animes: AnimeProps[];
-  movies: MovieProps[];
-  characters: CharacterProps[];
+}
+
+export interface UniverseFullProps {
+  id: number;
+  name: string;
+  animes: AnimeBasicProps[];
+  movies: MovieBasicProps[];
+  characters: CharacterBasicProps[];
 }
 
 export interface OptionsProps {

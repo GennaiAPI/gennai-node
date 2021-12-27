@@ -1,4 +1,9 @@
-import { MovieProps, OptionsProps, movieSchema } from "./interfaces";
+import {
+  MovieBasicProps,
+  MovieFullProps,
+  OptionsProps,
+  movieSchema,
+} from "./interfaces";
 
 import api from "../../api";
 import { characterSchema } from "../character/interfaces";
@@ -6,7 +11,7 @@ import { digimonSchema } from "../digimon/interfaces";
 import { digiviceSchema } from "../digivice/interfaces";
 import { universeSchema } from "../universe/interfaces";
 
-export const getMovies = (options?: OptionsProps): Promise<MovieProps[]> =>
+export const getMovies = (options?: OptionsProps): Promise<MovieBasicProps[]> =>
   api({
     operationName: "GetMovies",
     query: `query GetMovies {  
@@ -19,7 +24,7 @@ export const getMovies = (options?: OptionsProps): Promise<MovieProps[]> =>
     },
   });
 
-export const getMovieById = (id: number): Promise<MovieProps> =>
+export const getMovieById = (id: number): Promise<MovieFullProps> =>
   api({
     operationName: "GetMovieById",
     query: `query GetMovieById($getMovieByIdId: Int!) {  
@@ -44,7 +49,7 @@ export const getMovieById = (id: number): Promise<MovieProps> =>
     },
   });
 
-export const getMovieByTitle = (title: string): Promise<MovieProps> =>
+export const getMovieByTitle = (title: string): Promise<MovieFullProps> =>
   api({
     operationName: "GetMovieByTitle",
     query: `query GetMovieByTitle($getMovieByTitleTitle: String!) {  

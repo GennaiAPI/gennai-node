@@ -1,4 +1,4 @@
-import { DigimonProps } from "../digimon/interfaces";
+import { DigimonBasicProps } from "../digimon/interfaces";
 
 export const familySchema = `
   id
@@ -7,12 +7,19 @@ export const familySchema = `
   description
 `;
 
-export interface FamilyProps {
+export interface FamilyBasicProps {
   id: number;
   name: string;
   symbol: string;
   description: string;
-  digimons: DigimonProps[];
+}
+
+export interface FamilyFullProps {
+  id: number;
+  name: string;
+  symbol: string;
+  description: string;
+  digimons: DigimonBasicProps[];
 }
 
 export interface OptionsProps {

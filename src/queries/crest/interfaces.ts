@@ -1,6 +1,6 @@
-import { AnimeProps } from "../anime/interfaces";
-import { CharacterProps } from "../character/interfaces";
-import { DigimentalProps } from "../digimental/interfaces";
+import { AnimeBasicProps } from "../anime/interfaces";
+import { CharacterBasicProps } from "../character/interfaces";
+import { DigimentalBasicProps } from "../digimental/interfaces";
 
 export const crestSchema = `
   id
@@ -8,13 +8,19 @@ export const crestSchema = `
   description
 `;
 
-export interface CrestProps {
+export interface CrestBasicProps {
   id: number;
   name: string;
   description: string;
-  digiDestined: CharacterProps;
-  animes: AnimeProps[];
-  digimental: DigimentalProps;
+}
+
+export interface CrestFullProps {
+  id: number;
+  name: string;
+  description: string;
+  digiDestined: CharacterBasicProps;
+  animes: AnimeBasicProps[];
+  digimental: DigimentalBasicProps;
 }
 
 export interface OptionsProps {

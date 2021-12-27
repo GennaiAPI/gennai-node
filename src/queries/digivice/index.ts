@@ -1,5 +1,6 @@
 import {
-  DigiviceProps,
+  DigiviceBasicProps,
+  DigiviceFullProps,
   DigiviceType,
   OptionsProps,
   digiviceSchema,
@@ -12,7 +13,7 @@ import { movieSchema } from "../movie/interfaces";
 
 export const getDigivices = (
   options?: OptionsProps
-): Promise<DigiviceProps[]> =>
+): Promise<DigiviceBasicProps[]> =>
   api({
     operationName: "GetDigivices",
     query: `query GetDigivices {  
@@ -25,7 +26,7 @@ export const getDigivices = (
     },
   });
 
-export const getDigiviceById = (id: number): Promise<DigiviceProps> =>
+export const getDigiviceById = (id: number): Promise<DigiviceFullProps> =>
   api({
     operationName: "GetDigiviceById",
     query: `query GetDigiviceById($getDigiviceByIdId: Int!) {  
@@ -50,7 +51,7 @@ export const getDigiviceById = (id: number): Promise<DigiviceProps> =>
 export const getDigivicesByType = (
   type: DigiviceType,
   options?: OptionsProps
-): Promise<DigiviceProps[]> =>
+): Promise<DigiviceBasicProps[]> =>
   api({
     operationName: "GetDigivicesByType",
     query: `query GetDigivicesByType($getDigivicesByTypeType: DigiviceType!) {  

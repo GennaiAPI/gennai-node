@@ -1,9 +1,9 @@
-import { CharacterProps } from "../character/interfaces";
-import { CrestProps } from "../crest/interfaces";
-import { DigimonProps } from "../digimon/interfaces";
-import { DigiviceProps } from "../digivice/interfaces";
-import { EpisodeProps } from "../episode/interfaces";
-import { UniverseProps } from "../universe/interfaces";
+import { CharacterBasicProps } from "../character/interfaces";
+import { CrestBasicProps } from "../crest/interfaces";
+import { DigimonBasicProps } from "../digimon/interfaces";
+import { DigiviceBasicProps } from "../digivice/interfaces";
+import { EpisodeBasicProps } from "../episode/interfaces";
+import { UniverseBasicProps } from "../universe/interfaces";
 
 export const animeSchema = `
   id
@@ -12,17 +12,24 @@ export const animeSchema = `
   originalAirDate
 `;
 
-export interface AnimeProps {
+export interface AnimeBasicProps {
   id: number;
   title: string;
   synopsis: string;
   originalAirDate: Date;
-  episodes: EpisodeProps[];
-  digimons: DigimonProps[];
-  digivices: DigiviceProps[];
-  characters: CharacterProps[];
-  crests: CrestProps[];
-  universe: UniverseProps;
+}
+
+export interface AnimeFullProps {
+  id: number;
+  title: string;
+  synopsis: string;
+  originalAirDate: Date;
+  episodes: EpisodeBasicProps[];
+  digimons: DigimonBasicProps[];
+  digivices: DigiviceBasicProps[];
+  characters: CharacterBasicProps[];
+  crests: CrestBasicProps[];
+  universe: UniverseBasicProps;
 }
 
 export interface OptionsProps {

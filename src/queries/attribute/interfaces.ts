@@ -1,4 +1,4 @@
-import { DigimonProps } from "../digimon/interfaces";
+import { DigimonBasicProps } from "../digimon/interfaces";
 
 export const attributeSchema = `
   id
@@ -7,14 +7,21 @@ export const attributeSchema = `
   description
 `;
 
-export interface AttributeProps {
+export interface AttributeBasicProps {
   id: number;
   name: string;
   symbol: string;
   description: string;
-  strong: AttributeProps;
-  weak: AttributeProps;
-  digimons: DigimonProps[];
+}
+
+export interface AttributeFullProps {
+  id: number;
+  name: string;
+  symbol: string;
+  description: string;
+  strong: AttributeBasicProps;
+  weak: AttributeBasicProps;
+  digimons: DigimonBasicProps[];
 }
 
 export interface OptionsProps {
