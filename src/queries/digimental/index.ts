@@ -15,8 +15,8 @@ export const getDigimentals = (
 ): Promise<DigimentalBasicProps[]> =>
   api({
     operationName: "GetDigimentals",
-    query: `query GetDigimentals {  
-      getDigimentals {
+    query: `query GetDigimentals($options: OptionsInput) {  
+      getDigimentals(options: $options) {
         ${digimentalSchema}
       }
     }`,

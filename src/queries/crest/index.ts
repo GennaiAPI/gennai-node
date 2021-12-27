@@ -13,8 +13,8 @@ import { digimentalSchema } from "../digimental/interfaces";
 export const getCrests = (options?: OptionsProps): Promise<CrestBasicProps[]> =>
   api({
     operationName: "GetCrests",
-    query: `query GetCrests {  
-      getCrests {
+    query: `query GetCrests($options: OptionsInput) {  
+      getCrests(options: $options) {
         ${crestSchema}
       }
     }`,

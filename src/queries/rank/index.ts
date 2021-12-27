@@ -11,8 +11,8 @@ import { digimonSchema } from "../digimon/interfaces";
 export const getRanks = (options?: OptionsProps): Promise<RankBasicProps[]> =>
   api({
     operationName: "GetRanks",
-    query: `query GetRanks {  
-      getRanks {
+    query: `query GetRanks($options: OptionsInput) {  
+      getRanks(options: $options) {
         ${rankSchema}
       }
     }`,

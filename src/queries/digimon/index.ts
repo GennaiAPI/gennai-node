@@ -20,8 +20,8 @@ export const getDigimons = (
 ): Promise<DigimonBasicProps[]> =>
   api({
     operationName: "GetDigimons",
-    query: `query GetDigimons {  
-      getDigimons {
+    query: `query GetDigimons($options: OptionsInput) {  
+      getDigimons(options: $options) {
         ${digimonSchema}
       }
     }`,

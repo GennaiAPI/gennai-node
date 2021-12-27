@@ -13,8 +13,8 @@ export const getAttributes = (
 ): Promise<AttributeBasicProps[]> =>
   api({
     operationName: "GetAttributes",
-    query: `query GetAttributes {  
-      getAttributes {
+    query: `query GetAttributes($options: OptionsInput) {  
+      getAttributes(options: $options) {
         ${attributeSchema}
       }
     }`,

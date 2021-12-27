@@ -16,8 +16,8 @@ import { universeSchema } from "../universe/interfaces";
 export const getAnimes = (options?: OptionsProps): Promise<AnimeBasicProps[]> =>
   api({
     operationName: "GetAnimes",
-    query: `query GetAnimes {  
-      getAnimes {
+    query: `query GetAnimes($options: OptionsInput) {  
+      getAnimes(options: $options) {
         ${animeSchema}
       }
     }`,

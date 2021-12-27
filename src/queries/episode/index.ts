@@ -15,8 +15,8 @@ export const getEpisodes = (
 ): Promise<EpisodeBasicProps[]> =>
   api({
     operationName: "GetEpisodes",
-    query: `query GetEpisodes {  
-      getEpisodes {
+    query: `query GetEpisodes($options: OptionsInput) {  
+      getEpisodes(options: $options) {
         ${episodeSchema}
       }
     }`,

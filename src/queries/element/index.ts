@@ -13,8 +13,8 @@ export const getElements = (
 ): Promise<ElementBasicProps[]> =>
   api({
     operationName: "GetElements",
-    query: `query GetElements {  
-      getElements {
+    query: `query GetElements($options: OptionsInput) {  
+      getElements(options: $options) {
         ${elementSchema}
       }
     }`,

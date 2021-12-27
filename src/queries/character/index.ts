@@ -19,8 +19,8 @@ export const getCharacters = (
 ): Promise<CharacterBasicProps[]> =>
   api({
     operationName: "GetCharacters",
-    query: `query GetCharacters {  
-      getCharacters {
+    query: `query GetCharacters($options: OptionsInput) {  
+      getCharacters(options: $options) {
         ${characterSchema}
       }
     }`,

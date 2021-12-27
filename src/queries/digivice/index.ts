@@ -16,8 +16,8 @@ export const getDigivices = (
 ): Promise<DigiviceBasicProps[]> =>
   api({
     operationName: "GetDigivices",
-    query: `query GetDigivices {  
-      getDigivices {
+    query: `query GetDigivices($options: OptionsInput) {  
+      getDigivices(options: $options) {
         ${digiviceSchema}
       }
     }`,
@@ -54,8 +54,8 @@ export const getDigivicesByType = (
 ): Promise<DigiviceBasicProps[]> =>
   api({
     operationName: "GetDigivicesByType",
-    query: `query GetDigivicesByType($getDigivicesByTypeType: DigiviceType!) {  
-      getDigivicesByType(type: $getDigivicesByTypeType) {
+    query: `query GetDigivicesByType($getDigivicesByTypeType: DigiviceType!, $options: OptionsInput) {  
+      getDigivicesByType(type: $getDigivicesByTypeType, options: $options) {
         ${digiviceSchema}
         digiDestined {
           ${characterSchema}

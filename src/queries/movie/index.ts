@@ -14,8 +14,8 @@ import { universeSchema } from "../universe/interfaces";
 export const getMovies = (options?: OptionsProps): Promise<MovieBasicProps[]> =>
   api({
     operationName: "GetMovies",
-    query: `query GetMovies {  
-      getMovies {
+    query: `query GetMovies($options: OptionsInput) {  
+      getMovies(options: $options) {
         ${movieSchema}
       }
     }`,

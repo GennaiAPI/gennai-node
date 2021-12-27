@@ -15,8 +15,8 @@ export const getUniverses = (
 ): Promise<UniverseBasicProps[]> =>
   api({
     operationName: "GetUniverses",
-    query: `query GetUniverses {  
-      getUniverses {
+    query: `query GetUniverses($options: OptionsInput) {  
+      getUniverses(options: $options) {
         ${universeSchema}
       }
     }`,

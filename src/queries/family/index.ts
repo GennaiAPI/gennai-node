@@ -13,8 +13,8 @@ export const getFamilies = (
 ): Promise<FamilyBasicProps[]> =>
   api({
     operationName: "GetFamilies",
-    query: `query GetFamilies {  
-      getFamilies {
+    query: `query GetFamilies($options: OptionsInput) {  
+      getFamilies(options: $options) {
         ${familySchema}
       }
     }`,
