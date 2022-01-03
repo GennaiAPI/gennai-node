@@ -18,7 +18,9 @@ const axiosClient = axios.create({
 
 const api = async (data: ApiProps) => {
   try {
-    const res = await axiosClient.post("", data);
+    const res = await axiosClient.get("", {
+      params: data,
+    });
     if (res.status === 200) {
       return res.data;
     } else {
