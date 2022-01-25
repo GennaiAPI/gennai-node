@@ -22,10 +22,10 @@ export interface CharacterFullProps {
   id: number;
   name: string;
   isDigiDestined: boolean;
+  crests: CrestBasicProps[];
+  digimentals: DigimentalBasicProps[];
   animes: AnimeBasicProps[];
   digivices: DigiviceBasicProps[];
-  crest: CrestBasicProps;
-  digimental: DigimentalBasicProps;
   universes: UniverseBasicProps[];
   episodes: EpisodeBasicProps[];
   movies: MovieBasicProps[];

@@ -9,6 +9,7 @@ import { animeSchema } from "../anime/interfaces";
 import api from "../../api";
 import { characterSchema } from "../character/interfaces";
 import { digimentalSchema } from "../digimental/interfaces";
+import { movieSchema } from "../movie/interfaces";
 
 export const getCrests = (options?: OptionsProps): Promise<CrestBasicProps[]> =>
   api({
@@ -29,14 +30,17 @@ export const getCrestById = (id: number): Promise<CrestFullProps> =>
     query: `query GetCrestById($getCrestByIdId: Int!) {  
       getCrestById(id: $getCrestByIdId) {
         ${crestSchema}
-        digiDestined {
+        digimental {
+          ${digimentalSchema}
+        }
+        digiDestineds {
           ${characterSchema}
         }
         animes {
           ${animeSchema}
         }
-        digimental {
-          ${digimentalSchema}
+        movies {
+          ${movieSchema}
         }
       }
     }`,
@@ -51,14 +55,17 @@ export const getCrestByName = (name: string): Promise<CrestFullProps> =>
     query: `query GetCrestByName($getCrestByNameName: String!) {  
       getCrestByName(name: $getCrestByNameName) {
         ${crestSchema}
-        digiDestined {
+        digimental {
+          ${digimentalSchema}
+        }
+        digiDestineds {
           ${characterSchema}
         }
         animes {
           ${animeSchema}
         }
-        digimental {
-          ${digimentalSchema}
+        movies {
+          ${movieSchema}
         }
       }
     }`,

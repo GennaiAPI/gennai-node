@@ -1,24 +1,20 @@
 import { DigimonBasicProps } from "../digimon/interfaces";
 
-export const familySchema = `
+export const typeSchema = `
   id
   name
-  symbol
-  description
 `;
 
-export interface FamilyBasicProps {
+export interface TypeBasicProps {
   id: number;
   name: string;
-  symbol: string;
-  description: string;
 }
 
-export interface FamilyFullProps {
+export interface TypeFullProps {
   id: number;
   name: string;
-  symbol: string;
-  description: string;
+  strong: TypeBasicProps[];
+  weak: TypeBasicProps[];
   digimons: DigimonBasicProps[];
 }
 
@@ -26,5 +22,5 @@ export interface OptionsProps {
   offset?: number;
   limit?: number;
   order?: string;
-  orderBy?: "id" | "name" | "symbol" | "description";
+  orderBy?: "id" | "name";
 }

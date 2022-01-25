@@ -1,6 +1,8 @@
+import { AnimeBasicProps } from "../anime/interfaces";
 import { CharacterBasicProps } from "../character/interfaces";
 import { CrestBasicProps } from "../crest/interfaces";
 import { DigimonBasicProps } from "../digimon/interfaces";
+import { MovieBasicProps } from "../movie/interfaces";
 
 export const digimentalSchema = `
   id
@@ -18,9 +20,11 @@ export interface DigimentalFullProps {
   id: number;
   name: string;
   description: string;
-  digiDestined: CharacterBasicProps;
-  digimons: DigimonBasicProps[];
   crest: CrestBasicProps;
+  digiDestineds: CharacterBasicProps[];
+  digimons: DigimonBasicProps[];
+  animes: AnimeBasicProps[];
+  movies: MovieBasicProps[];
 }
 
 export interface OptionsProps {

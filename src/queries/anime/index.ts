@@ -8,6 +8,7 @@ import {
 import api from "../../api";
 import { characterSchema } from "../character/interfaces";
 import { crestSchema } from "../crest/interfaces";
+import { digimentalSchema } from "../digimental/interfaces";
 import { digimonSchema } from "../digimon/interfaces";
 import { digiviceSchema } from "../digivice/interfaces";
 import { episodeSchema } from "../episode/interfaces";
@@ -32,6 +33,15 @@ export const getAnimeById = (id: number): Promise<AnimeFullProps> =>
     query: `query GetAnimeById($getAnimeByIdId: Int!) {  
       getAnimeById(id: $getAnimeByIdId) {
         ${animeSchema}
+        universe {
+          ${universeSchema}
+        }
+        crests {
+          ${crestSchema}
+        }
+        digimentals {
+          ${digimentalSchema}
+        }
         episodes {
           ${episodeSchema}
         }
@@ -43,12 +53,6 @@ export const getAnimeById = (id: number): Promise<AnimeFullProps> =>
         }
         characters {
           ${characterSchema}
-        }
-        crests {
-          ${crestSchema}
-        }
-        universe {
-          ${universeSchema}
         }
       }
     }`,
@@ -63,6 +67,15 @@ export const getAnimeByTitle = (title: string): Promise<AnimeFullProps> =>
     query: `query GetAnimeByTitle($getAnimeByTitleTitle: String!) {  
       getAnimeByTitle(title: $getAnimeByTitleTitle) {
         ${animeSchema}
+        universe {
+          ${universeSchema}
+        }
+        crests {
+          ${crestSchema}
+        }
+        digimentals {
+          ${digimentalSchema}
+        }
         episodes {
           ${episodeSchema}
         }
@@ -74,12 +87,6 @@ export const getAnimeByTitle = (title: string): Promise<AnimeFullProps> =>
         }
         characters {
           ${characterSchema}
-        }
-        crests {
-          ${crestSchema}
-        }
-        universe {
-          ${universeSchema}
         }
       }
     }`,

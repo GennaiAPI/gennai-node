@@ -27,18 +27,14 @@ import {
   getDigivicesByType,
 } from "./queries/digivice";
 import {
-  getElementById,
-  getElementByName,
-  getElements,
-} from "./queries/element";
-import {
   getEpisodeById,
   getEpisodeByTitle,
   getEpisodes,
 } from "./queries/episode";
-import { getFamilies, getFamilyById, getFamilyByName } from "./queries/family";
+import { getFieldById, getFieldByName, getFields } from "./queries/field";
 import { getMovieById, getMovieByTitle, getMovies } from "./queries/movie";
 import { getRankById, getRankByName, getRanks } from "./queries/rank";
+import { getTypeById, getTypeByName, getTypes } from "./queries/type";
 import { getUniverseById, getUniverseByName } from "./queries/universe";
 
 export {
@@ -64,15 +60,15 @@ export {
   getDigiviceTypes,
   getDigivices,
   getDigivicesByType,
-  getElementById,
-  getElementByName,
-  getElements,
+  getTypeById,
+  getTypeByName,
+  getTypes,
   getEpisodeById,
   getEpisodeByTitle,
   getEpisodes,
-  getFamilies,
-  getFamilyById,
-  getFamilyByName,
+  getFields,
+  getFieldById,
+  getFieldByName,
   getMovieById,
   getMovieByTitle,
   getMovies,

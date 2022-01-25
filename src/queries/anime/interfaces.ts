@@ -1,5 +1,6 @@
 import { CharacterBasicProps } from "../character/interfaces";
 import { CrestBasicProps } from "../crest/interfaces";
+import { DigimentalBasicProps } from "../digimental/interfaces";
 import { DigimonBasicProps } from "../digimon/interfaces";
 import { DigiviceBasicProps } from "../digivice/interfaces";
 import { EpisodeBasicProps } from "../episode/interfaces";
@@ -24,12 +25,13 @@ export interface AnimeFullProps {
   title: string;
   synopsis: string;
   originalAirDate: Date;
+  universe: UniverseBasicProps;
+  crests: CrestBasicProps[];
+  digimentals: DigimentalBasicProps[];
   episodes: EpisodeBasicProps[];
   digimons: DigimonBasicProps[];
   digivices: DigiviceBasicProps[];
   characters: CharacterBasicProps[];
-  crests: CrestBasicProps[];
-  universe: UniverseBasicProps;
 }
 
 export interface OptionsProps {

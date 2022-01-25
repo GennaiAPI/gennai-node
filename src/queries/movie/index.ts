@@ -7,6 +7,8 @@ import {
 
 import api from "../../api";
 import { characterSchema } from "../character/interfaces";
+import { crestSchema } from "../crest/interfaces";
+import { digimentalSchema } from "../digimental/interfaces";
 import { digimonSchema } from "../digimon/interfaces";
 import { digiviceSchema } from "../digivice/interfaces";
 import { universeSchema } from "../universe/interfaces";
@@ -42,6 +44,12 @@ export const getMovieById = (id: number): Promise<MovieFullProps> =>
         digivices {
           ${digiviceSchema}
         }
+        crests {
+          ${crestSchema}
+        }
+        digimentals {
+          ${digimentalSchema}
+        }
       }
     }`,
     variables: {
@@ -66,6 +74,12 @@ export const getMovieByTitle = (title: string): Promise<MovieFullProps> =>
         }
         digivices {
           ${digiviceSchema}
+        }
+        crests {
+          ${crestSchema}
+        }
+        digimentals {
+          ${digimentalSchema}
         }
       }
     }`,

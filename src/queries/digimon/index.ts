@@ -9,11 +9,11 @@ import { animeSchema } from "../anime/interfaces";
 import api from "../../api";
 import { attributeSchema } from "../attribute/interfaces";
 import { digimentalSchema } from "../digimental/interfaces";
-import { elementSchema } from "../element/interfaces";
 import { episodeSchema } from "../episode/interfaces";
-import { familySchema } from "../family/interfaces";
+import { fieldSchema } from "../field/interfaces";
 import { movieSchema } from "../movie/interfaces";
 import { rankSchema } from "../rank/interfaces";
+import { typeSchema } from "../type/interfaces";
 
 export const getDigimons = (
   options?: OptionsProps
@@ -36,6 +36,10 @@ export const getDigimonById = (id: number): Promise<DigimonFullProps> =>
     query: `query GetDigimonById($getDigimonByIdId: Int!) {  
       getDigimonById(id: $getDigimonByIdId) {
         ${digimonSchema}
+        otherNames {
+          lang
+          name
+        }
         prior {
           ${digimonSchema}
         }
@@ -48,11 +52,11 @@ export const getDigimonById = (id: number): Promise<DigimonFullProps> =>
         attribute {
           ${attributeSchema}
         }
-        element {
-          ${elementSchema}
+        type {
+          ${typeSchema}
         }
-        families {
-          ${familySchema}
+        fields {
+          ${fieldSchema}
         }
         animes {
           ${animeSchema}
@@ -79,6 +83,10 @@ export const getDigimonByName = (name: string): Promise<DigimonFullProps> =>
     query: `query GetDigimonByName($getDigimonByNameName: String!) {  
       getDigimonByName(name: $getDigimonByNameName) {
         ${digimonSchema}
+        otherNames {
+          lang
+          name
+        }
         prior {
           ${digimonSchema}
         }
@@ -91,11 +99,11 @@ export const getDigimonByName = (name: string): Promise<DigimonFullProps> =>
         attribute {
           ${attributeSchema}
         }
-        element {
-          ${elementSchema}
+        type {
+          ${typeSchema}
         }
-        families {
-          ${familySchema}
+        fields {
+          ${fieldSchema}
         }
         animes {
           ${animeSchema}

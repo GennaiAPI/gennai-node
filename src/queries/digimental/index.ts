@@ -5,10 +5,12 @@ import {
   digimentalSchema,
 } from "./interfaces";
 
+import { animeSchema } from "../anime/interfaces";
 import api from "../../api";
 import { characterSchema } from "../character/interfaces";
 import { crestSchema } from "../crest/interfaces";
 import { digimonSchema } from "../digimon/interfaces";
+import { movieSchema } from "../movie/interfaces";
 
 export const getDigimentals = (
   options?: OptionsProps
@@ -31,14 +33,20 @@ export const getDigimentalById = (id: number): Promise<DigimentalFullProps> =>
     query: `query GetDigimentalById($getDigimentalByIdId: Int!) {  
       getDigimentalById(id: $getDigimentalByIdId) {
         ${digimentalSchema}
+        crest {
+          ${crestSchema}
+        }
         digiDestined {
           ${characterSchema}
         }
         digimons {
           ${digimonSchema}
         }
-        crest {
-          ${crestSchema}
+        animes {
+          ${animeSchema}
+        }
+        movies {
+          ${movieSchema}
         }
       }
     }`,
@@ -55,14 +63,20 @@ export const getDigimentalByName = (
     query: `query GetDigimentalByName($getDigimentalByNameName: String!) {  
       getDigimentalByName(name: $getDigimentalByNameName) {
         ${digimentalSchema}
+        crest {
+          ${crestSchema}
+        }
         digiDestined {
           ${characterSchema}
         }
         digimons {
           ${digimonSchema}
         }
-        crest {
-          ${crestSchema}
+        animes {
+          ${animeSchema}
+        }
+        movies {
+          ${movieSchema}
         }
       }
     }`,

@@ -41,10 +41,10 @@ export const getCharacterById = (id: number): Promise<CharacterFullProps> =>
         digivices {
           ${digiviceSchema}
         }
-        crest {
+        crests {
           ${crestSchema}
         }
-        digimental {
+        digimentals {
           ${digimentalSchema}
         }
         universes {
@@ -75,10 +75,10 @@ export const getCharacterByName = (name: string): Promise<CharacterFullProps> =>
         digivices {
           ${digiviceSchema}
         }
-        crest {
+        crests {
           ${crestSchema}
         }
-        digimental {
+        digimentals {
           ${digimentalSchema}
         }
         universes {
