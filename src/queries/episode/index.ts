@@ -28,8 +28,8 @@ export const getEpisodes = (
 export const getEpisodeById = (id: number): Promise<EpisodeFullProps> =>
   api({
     operationName: "GetEpisodeById",
-    query: `query GetEpisodeById($getEpisodeByIdId: Int!) {  
-      getEpisodeById(id: $getEpisodeByIdId) {
+    query: `query GetEpisodeById($id: Int!) {  
+      getEpisodeById(id: $id) {
         ${episodeSchema}
         series {
           ${seriesSchema}
@@ -43,15 +43,15 @@ export const getEpisodeById = (id: number): Promise<EpisodeFullProps> =>
       }
     }`,
     variables: {
-      getEpisodeByIdId: id,
+      id: id,
     },
   });
 
 export const getEpisodeByTitle = (title: string): Promise<EpisodeFullProps> =>
   api({
     operationName: "GetEpisodeByTitle",
-    query: `query GetEpisodeByTitle($getEpisodeByTitleTitle: String!) {  
-      getEpisodeByTitle(title: $getEpisodeByTitleTitle) {
+    query: `query GetEpisodeByTitle($title: String!) {  
+      getEpisodeByTitle(title: $title) {
         ${episodeSchema}
         series {
           ${seriesSchema}
@@ -65,6 +65,6 @@ export const getEpisodeByTitle = (title: string): Promise<EpisodeFullProps> =>
       }
     }`,
     variables: {
-      getEpisodeByTitleTitle: title,
+      title: title,
     },
   });

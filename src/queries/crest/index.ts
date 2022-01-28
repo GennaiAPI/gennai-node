@@ -27,8 +27,8 @@ export const getCrests = (options?: OptionsProps): Promise<CrestBasicProps[]> =>
 export const getCrestById = (id: number): Promise<CrestFullProps> =>
   api({
     operationName: "GetCrestById",
-    query: `query GetCrestById($getCrestByIdId: Int!) {  
-      getCrestById(id: $getCrestByIdId) {
+    query: `query GetCrestById($id: Int!) {  
+      getCrestById(id: $id) {
         ${crestSchema}
         digimental {
           ${digimentalSchema}
@@ -45,15 +45,15 @@ export const getCrestById = (id: number): Promise<CrestFullProps> =>
       }
     }`,
     variables: {
-      getCrestByIdId: id,
+      id: id,
     },
   });
 
 export const getCrestByName = (name: string): Promise<CrestFullProps> =>
   api({
     operationName: "GetCrestByName",
-    query: `query GetCrestByName($getCrestByNameName: String!) {  
-      getCrestByName(name: $getCrestByNameName) {
+    query: `query GetCrestByName($name: String!) {  
+      getCrestByName(name: $name) {
         ${crestSchema}
         digimental {
           ${digimentalSchema}
@@ -70,6 +70,6 @@ export const getCrestByName = (name: string): Promise<CrestFullProps> =>
       }
     }`,
     variables: {
-      getCrestByNameName: name,
+      name: name,
     },
   });

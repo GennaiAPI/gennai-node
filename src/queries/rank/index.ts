@@ -24,8 +24,8 @@ export const getRanks = (options?: OptionsProps): Promise<RankBasicProps[]> =>
 export const getRankById = (id: number): Promise<RankFullProps> =>
   api({
     operationName: "GetRankById",
-    query: `query GetRankById($getRankByIdId: Int!) {  
-      getRankById(id: $getRankByIdId) {
+    query: `query GetRankById($id: Int!) {  
+      getRankById(id: $id) {
         ${rankSchema}
         digimons {
           ${digimonSchema}
@@ -33,15 +33,15 @@ export const getRankById = (id: number): Promise<RankFullProps> =>
       }
     }`,
     variables: {
-      getRankByIdId: id,
+      id: id,
     },
   });
 
 export const getRankByName = (name: string): Promise<RankFullProps> =>
   api({
     operationName: "GetRankByName",
-    query: `query GetRankByName($getRankByNameName: String!) {  
-      getRankByName(name: $getRankByNameName) {
+    query: `query GetRankByName($name: String!) {  
+      getRankByName(name: $name) {
         ${rankSchema}
         digimons {
           ${digimonSchema}
@@ -49,6 +49,6 @@ export const getRankByName = (name: string): Promise<RankFullProps> =>
       }
     }`,
     variables: {
-      getRankByNameName: name,
+      name: name,
     },
   });

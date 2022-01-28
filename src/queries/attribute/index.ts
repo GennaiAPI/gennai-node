@@ -26,8 +26,8 @@ export const getAttributes = (
 export const getAttributeById = (id: number): Promise<AttributeFullProps> =>
   api({
     operationName: "GetAttributeById",
-    query: `query GetAttributeById($getAttributeByIdId: Int!) {  
-      getAttributeById(id: $getAttributeByIdId) {
+    query: `query GetAttributeById($id: Int!) {  
+      getAttributeById(id: $id) {
         ${attributeSchema}
         strong {
           ${attributeSchema}
@@ -41,15 +41,15 @@ export const getAttributeById = (id: number): Promise<AttributeFullProps> =>
       }
     }`,
     variables: {
-      getAttributeByIdId: id,
+      id: id,
     },
   });
 
 export const getAttributeByName = (name: string): Promise<AttributeFullProps> =>
   api({
     operationName: "GetAttributeByName",
-    query: `query GetAttributeByName($getAttributeByNameName: String!) {  
-      getAttributeByName(name: $getAttributeByNameName) {
+    query: `query GetAttributeByName($name: String!) {  
+      getAttributeByName(name: $name) {
         ${attributeSchema}
         strong {
           ${attributeSchema}
@@ -63,6 +63,6 @@ export const getAttributeByName = (name: string): Promise<AttributeFullProps> =>
       }
     }`,
     variables: {
-      getAttributeByNameName: name,
+      name: name,
     },
   });

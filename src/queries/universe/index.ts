@@ -28,8 +28,8 @@ export const getUniverses = (
 export const getUniverseById = (id: number): Promise<UniverseFullProps> =>
   api({
     operationName: "GetUniverseById",
-    query: `query GetUniverseById($getUniverseByIdId: Int!) {  
-      getUniverseById(id: $getUniverseByIdId) {
+    query: `query GetUniverseById($id: Int!) {  
+      getUniverseById(id: $id) {
         ${universeSchema}
         series {
           ${seriesSchema}
@@ -43,15 +43,15 @@ export const getUniverseById = (id: number): Promise<UniverseFullProps> =>
       }
     }`,
     variables: {
-      getUniverseByIdId: id,
+      id: id,
     },
   });
 
 export const getUniverseByName = (name: string): Promise<UniverseFullProps> =>
   api({
     operationName: "GetUniverseByName",
-    query: `query GetUniverseByName($getUniverseByNameName: String!) {  
-      getUniverseByName(name: $getUniverseByNameName) {
+    query: `query GetUniverseByName($name: String!) {  
+      getUniverseByName(name: $name) {
         ${universeSchema}
         series {
           ${seriesSchema}
@@ -65,6 +65,6 @@ export const getUniverseByName = (name: string): Promise<UniverseFullProps> =>
       }
     }`,
     variables: {
-      getUniverseByNameName: name,
+      name: name,
     },
   });

@@ -29,8 +29,8 @@ export const getMovies = (options?: OptionsProps): Promise<MovieBasicProps[]> =>
 export const getMovieById = (id: number): Promise<MovieFullProps> =>
   api({
     operationName: "GetMovieById",
-    query: `query GetMovieById($getMovieByIdId: Int!) {  
-      getMovieById(id: $getMovieByIdId) {
+    query: `query GetMovieById($id: Int!) {  
+      getMovieById(id: $id) {
         ${movieSchema}
         universe {
           ${universeSchema}
@@ -53,15 +53,15 @@ export const getMovieById = (id: number): Promise<MovieFullProps> =>
       }
     }`,
     variables: {
-      getMovieByIdId: id,
+      id: id,
     },
   });
 
 export const getMovieByTitle = (title: string): Promise<MovieFullProps> =>
   api({
     operationName: "GetMovieByTitle",
-    query: `query GetMovieByTitle($getMovieByTitleTitle: String!) {  
-      getMovieByTitle(title: $getMovieByTitleTitle) {
+    query: `query GetMovieByTitle($title: String!) {  
+      getMovieByTitle(title: $title) {
         ${movieSchema}
         universe {
           ${universeSchema}
@@ -84,6 +84,6 @@ export const getMovieByTitle = (title: string): Promise<MovieFullProps> =>
       }
     }`,
     variables: {
-      getMovieByTitleTitle: title,
+      title: title,
     },
   });

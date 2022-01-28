@@ -30,8 +30,8 @@ export const getDigimentals = (
 export const getDigimentalById = (id: number): Promise<DigimentalFullProps> =>
   api({
     operationName: "GetDigimentalById",
-    query: `query GetDigimentalById($getDigimentalByIdId: Int!) {  
-      getDigimentalById(id: $getDigimentalByIdId) {
+    query: `query GetDigimentalById($id: Int!) {  
+      getDigimentalById(id: $id) {
         ${digimentalSchema}
         crest {
           ${crestSchema}
@@ -51,7 +51,7 @@ export const getDigimentalById = (id: number): Promise<DigimentalFullProps> =>
       }
     }`,
     variables: {
-      getDigimentalByIdId: id,
+      id: id,
     },
   });
 
@@ -60,8 +60,8 @@ export const getDigimentalByName = (
 ): Promise<DigimentalFullProps> =>
   api({
     operationName: "GetDigimentalByName",
-    query: `query GetDigimentalByName($getDigimentalByNameName: String!) {  
-      getDigimentalByName(name: $getDigimentalByNameName) {
+    query: `query GetDigimentalByName($name: String!) {  
+      getDigimentalByName(name: $name) {
         ${digimentalSchema}
         crest {
           ${crestSchema}
@@ -81,6 +81,6 @@ export const getDigimentalByName = (
       }
     }`,
     variables: {
-      getDigimentalByNameName: name,
+      name: name,
     },
   });

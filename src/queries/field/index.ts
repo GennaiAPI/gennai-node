@@ -24,8 +24,8 @@ export const getFields = (options?: OptionsProps): Promise<FieldBasicProps[]> =>
 export const getFieldById = (id: number): Promise<FieldFullProps> =>
   api({
     operationName: "GetFieldById",
-    query: `query GetFieldById($getFieldByIdId: Int!) {  
-      getFieldById(id: $getFieldByIdId) {
+    query: `query GetFieldById($id: Int!) {  
+      getFieldById(id: $id) {
         ${fieldSchema}
         digimons {
           ${digimonSchema}
@@ -33,15 +33,15 @@ export const getFieldById = (id: number): Promise<FieldFullProps> =>
       }
     }`,
     variables: {
-      getFieldByIdId: id,
+      id: id,
     },
   });
 
 export const getFieldByName = (name: string): Promise<FieldFullProps> =>
   api({
     operationName: "GetFieldByName",
-    query: `query GetFieldByName($getFieldByNameName: String!) {  
-      getFieldByName(name: $getFieldByNameName) {
+    query: `query GetFieldByName($name: String!) {  
+      getFieldByName(name: $name) {
         ${fieldSchema}
         digimons {
           ${digimonSchema}
@@ -49,6 +49,6 @@ export const getFieldByName = (name: string): Promise<FieldFullProps> =>
       }
     }`,
     variables: {
-      getFieldByNameName: name,
+      name: name,
     },
   });

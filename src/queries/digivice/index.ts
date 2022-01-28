@@ -29,8 +29,8 @@ export const getDigivices = (
 export const getDigiviceById = (id: number): Promise<DigiviceFullProps> =>
   api({
     operationName: "GetDigiviceById",
-    query: `query GetDigiviceById($getDigiviceByIdId: Int!) {  
-      getDigiviceById(id: $getDigiviceByIdId) {
+    query: `query GetDigiviceById($id: Int!) {  
+      getDigiviceById(id: $id) {
         ${digiviceSchema}
         digiDestined {
           ${characterSchema}
@@ -44,7 +44,7 @@ export const getDigiviceById = (id: number): Promise<DigiviceFullProps> =>
       }
     }`,
     variables: {
-      getDigiviceByIdId: id,
+      id: id,
     },
   });
 
@@ -54,8 +54,8 @@ export const getDigivicesByType = (
 ): Promise<DigiviceBasicProps[]> =>
   api({
     operationName: "GetDigivicesByType",
-    query: `query GetDigivicesByType($getDigivicesByTypeType: DigiviceType!, $options: OptionsInput) {  
-      getDigivicesByType(type: $getDigivicesByTypeType, options: $options) {
+    query: `query GetDigivicesByType($type: DigiviceType!, $options: OptionsInput) {  
+      getDigivicesByType(type: $type, options: $options) {
         ${digiviceSchema}
         digiDestined {
           ${characterSchema}
@@ -69,7 +69,7 @@ export const getDigivicesByType = (
       }
     }`,
     variables: {
-      getDigivicesByTypeType: type,
+      type: type,
       options: options,
     },
   });

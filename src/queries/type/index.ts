@@ -24,8 +24,8 @@ export const getTypes = (options?: OptionsProps): Promise<TypeBasicProps[]> =>
 export const getTypeById = (id: number): Promise<TypeFullProps> =>
   api({
     operationName: "GetTypeById",
-    query: `query GetTypeById($getTypeByIdId: Int!) {  
-      getTypeById(id: $getTypeByIdId) {
+    query: `query GetTypeById($id: Int!) {  
+      getTypeById(id: $id) {
         ${typeSchema}
         strong {
           ${typeSchema}
@@ -39,15 +39,15 @@ export const getTypeById = (id: number): Promise<TypeFullProps> =>
       }
     }`,
     variables: {
-      getTypeByIdId: id,
+      id: id,
     },
   });
 
 export const getTypeByName = (name: string): Promise<TypeFullProps> =>
   api({
     operationName: "GetTypeByName",
-    query: `query GetTypeByName($getTypeByNameName: String!) {  
-      getTypeByName(name: $getTypeByNameName) {
+    query: `query GetTypeByName($name: String!) {  
+      getTypeByName(name: $name) {
         ${typeSchema}
         strong {
           ${typeSchema}
@@ -61,6 +61,6 @@ export const getTypeByName = (name: string): Promise<TypeFullProps> =>
       }
     }`,
     variables: {
-      getTypeByNameName: name,
+      name: name,
     },
   });

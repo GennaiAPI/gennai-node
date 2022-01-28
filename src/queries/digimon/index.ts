@@ -33,8 +33,8 @@ export const getDigimons = (
 export const getDigimonById = (id: number): Promise<DigimonFullProps> =>
   api({
     operationName: "GetDigimonById",
-    query: `query GetDigimonById($getDigimonByIdId: Int!) {  
-      getDigimonById(id: $getDigimonByIdId) {
+    query: `query GetDigimonById($id: Int!) {  
+      getDigimonById(id: $id) {
         ${digimonSchema}
         otherNames {
           lang
@@ -73,15 +73,15 @@ export const getDigimonById = (id: number): Promise<DigimonFullProps> =>
       }
     }`,
     variables: {
-      getDigimonByIdId: id,
+      id: id,
     },
   });
 
 export const getDigimonByName = (name: string): Promise<DigimonFullProps> =>
   api({
     operationName: "GetDigimonByName",
-    query: `query GetDigimonByName($getDigimonByNameName: String!) {  
-      getDigimonByName(name: $getDigimonByNameName) {
+    query: `query GetDigimonByName($name: String!) {  
+      getDigimonByName(name: $name) {
         ${digimonSchema}
         otherNames {
           lang
@@ -120,6 +120,6 @@ export const getDigimonByName = (name: string): Promise<DigimonFullProps> =>
       }
     }`,
     variables: {
-      getDigimonByNameName: name,
+      name: name,
     },
   });

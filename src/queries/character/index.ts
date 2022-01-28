@@ -32,8 +32,8 @@ export const getCharacters = (
 export const getCharacterById = (id: number): Promise<CharacterFullProps> =>
   api({
     operationName: "GetCharacterById",
-    query: `query GetCharacterById($getCharacterByIdId: Int!) {  
-      getCharacterById(id: $getCharacterByIdId) {
+    query: `query GetCharacterById($id: Int!) {  
+      getCharacterById(id: $id) {
         ${characterSchema}
         series {
           ${seriesSchema}
@@ -59,15 +59,15 @@ export const getCharacterById = (id: number): Promise<CharacterFullProps> =>
       }
     }`,
     variables: {
-      getCharacterByIdId: id,
+      id: id,
     },
   });
 
 export const getCharacterByName = (name: string): Promise<CharacterFullProps> =>
   api({
     operationName: "GetCharacterByName",
-    query: `query GetCharacterByName($getCharacterByNameName: String!) {  
-      getCharacterByName(name: $getCharacterByNameName) {
+    query: `query GetCharacterByName($name: String!) {  
+      getCharacterByName(name: $name) {
         ${characterSchema}
         series {
           ${seriesSchema}
@@ -93,6 +93,6 @@ export const getCharacterByName = (name: string): Promise<CharacterFullProps> =>
       }
     }`,
     variables: {
-      getCharacterByNameName: name,
+      name: name,
     },
   });
