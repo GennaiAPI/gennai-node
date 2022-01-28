@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 
 interface ApiProps {
   operationName: string;
@@ -30,8 +30,9 @@ const api = async (data: ApiProps) => {
     } else {
       throw new Error(`Ocorreu um erro com este código: ${res.status}`);
     }
-  } catch (error) {
-    return error;
+  } catch (_error: any) {
+    let error: AxiosError = _error;
+    return error?.response?.data?.errors;
   }
 };
 
