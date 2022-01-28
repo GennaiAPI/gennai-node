@@ -1,6 +1,6 @@
-import { AnimeBasicProps } from "../anime/interfaces";
 import { CharacterBasicProps } from "../character/interfaces";
 import { MovieBasicProps } from "../movie/interfaces";
+import { SeriesBasicProps } from "../series/interfaces";
 
 export const universeSchema = `
   id
@@ -15,7 +15,7 @@ export interface UniverseBasicProps {
 export interface UniverseFullProps {
   id: number;
   name: string;
-  animes: AnimeBasicProps[];
+  series: SeriesBasicProps[];
   movies: MovieBasicProps[];
   characters: CharacterBasicProps[];
 }

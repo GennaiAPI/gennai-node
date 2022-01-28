@@ -1,10 +1,10 @@
-import { AnimeBasicProps } from "../anime/interfaces";
 import { AttributeBasicProps } from "../attribute/interfaces";
 import { DigimentalBasicProps } from "../digimental/interfaces";
 import { EpisodeBasicProps } from "../episode/interfaces";
 import { FieldBasicProps } from "../field/interfaces";
 import { MovieBasicProps } from "../movie/interfaces";
 import { RankBasicProps } from "../rank/interfaces";
+import { SeriesBasicProps } from "../series/interfaces";
 import { TypeBasicProps } from "../type/interfaces";
 
 export const digimonSchema = `
@@ -37,7 +37,7 @@ export interface DigimonFullProps {
   prior: DigimonBasicProps[];
   next: DigimonBasicProps[];
   fields: FieldBasicProps[];
-  animes: AnimeBasicProps[];
+  series: SeriesBasicProps[];
   episodes: EpisodeBasicProps[];
   movies: MovieBasicProps[];
 }

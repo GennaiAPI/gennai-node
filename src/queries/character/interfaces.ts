@@ -1,9 +1,9 @@
-import { AnimeBasicProps } from "../anime/interfaces";
 import { CrestBasicProps } from "../crest/interfaces";
 import { DigimentalBasicProps } from "../digimental/interfaces";
 import { DigiviceBasicProps } from "../digivice/interfaces";
 import { EpisodeBasicProps } from "../episode/interfaces";
 import { MovieBasicProps } from "../movie/interfaces";
+import { SeriesBasicProps } from "../series/interfaces";
 import { UniverseBasicProps } from "../universe/interfaces";
 
 export const characterSchema = `
@@ -24,7 +24,7 @@ export interface CharacterFullProps {
   isDigiDestined: boolean;
   crests: CrestBasicProps[];
   digimentals: DigimentalBasicProps[];
-  animes: AnimeBasicProps[];
+  series: SeriesBasicProps[];
   digivices: DigiviceBasicProps[];
   universes: UniverseBasicProps[];
   episodes: EpisodeBasicProps[];

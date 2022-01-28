@@ -5,10 +5,10 @@ import {
   episodeSchema,
 } from "./interfaces";
 
-import { animeSchema } from "../anime/interfaces";
 import api from "../../api";
 import { characterSchema } from "../character/interfaces";
 import { digimonSchema } from "../digimon/interfaces";
+import { seriesSchema } from "../series/interfaces";
 
 export const getEpisodes = (
   options?: OptionsProps
@@ -31,8 +31,8 @@ export const getEpisodeById = (id: number): Promise<EpisodeFullProps> =>
     query: `query GetEpisodeById($getEpisodeByIdId: Int!) {  
       getEpisodeById(id: $getEpisodeByIdId) {
         ${episodeSchema}
-        anime {
-          ${animeSchema}
+        series {
+          ${seriesSchema}
         }
         characters {
           ${characterSchema}
@@ -53,8 +53,8 @@ export const getEpisodeByTitle = (title: string): Promise<EpisodeFullProps> =>
     query: `query GetEpisodeByTitle($getEpisodeByTitleTitle: String!) {  
       getEpisodeByTitle(title: $getEpisodeByTitleTitle) {
         ${episodeSchema}
-        anime {
-          ${animeSchema}
+        series {
+          ${seriesSchema}
         }
         characters {
           ${characterSchema}

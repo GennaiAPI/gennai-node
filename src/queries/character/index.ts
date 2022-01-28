@@ -5,13 +5,13 @@ import {
   characterSchema,
 } from "./interfaces";
 
-import { animeSchema } from "../anime/interfaces";
 import api from "../../api";
 import { crestSchema } from "../crest/interfaces";
 import { digimentalSchema } from "../digimental/interfaces";
 import { digiviceSchema } from "../digivice/interfaces";
 import { episodeSchema } from "../episode/interfaces";
 import { movieSchema } from "../movie/interfaces";
+import { seriesSchema } from "../series/interfaces";
 import { universeSchema } from "../universe/interfaces";
 
 export const getCharacters = (
@@ -35,8 +35,8 @@ export const getCharacterById = (id: number): Promise<CharacterFullProps> =>
     query: `query GetCharacterById($getCharacterByIdId: Int!) {  
       getCharacterById(id: $getCharacterByIdId) {
         ${characterSchema}
-        animes {
-          ${animeSchema}
+        series {
+          ${seriesSchema}
         }
         digivices {
           ${digiviceSchema}
@@ -69,8 +69,8 @@ export const getCharacterByName = (name: string): Promise<CharacterFullProps> =>
     query: `query GetCharacterByName($getCharacterByNameName: String!) {  
       getCharacterByName(name: $getCharacterByNameName) {
         ${characterSchema}
-        animes {
-          ${animeSchema}
+        series {
+          ${seriesSchema}
         }
         digivices {
           ${digiviceSchema}

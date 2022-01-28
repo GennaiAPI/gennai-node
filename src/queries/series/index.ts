@@ -1,8 +1,8 @@
 import {
-  AnimeBasicProps,
-  AnimeFullProps,
   OptionsProps,
-  animeSchema,
+  SeriesBasicProps,
+  SeriesFullProps,
+  seriesSchema,
 } from "./interfaces";
 
 import api from "../../api";
@@ -14,12 +14,14 @@ import { digiviceSchema } from "../digivice/interfaces";
 import { episodeSchema } from "../episode/interfaces";
 import { universeSchema } from "../universe/interfaces";
 
-export const getAnimes = (options?: OptionsProps): Promise<AnimeBasicProps[]> =>
+export const getSeries = (
+  options?: OptionsProps
+): Promise<SeriesBasicProps[]> =>
   api({
-    operationName: "GetAnimes",
-    query: `query GetAnimes($options: OptionsInput) {  
-      getAnimes(options: $options) {
-        ${animeSchema}
+    operationName: "GetSeries",
+    query: `query GetSeries($options: OptionsInput) {  
+      getSeries(options: $options) {
+        ${seriesSchema}
       }
     }`,
     variables: {
@@ -27,12 +29,12 @@ export const getAnimes = (options?: OptionsProps): Promise<AnimeBasicProps[]> =>
     },
   });
 
-export const getAnimeById = (id: number): Promise<AnimeFullProps> =>
+export const getSeriesById = (id: number): Promise<SeriesFullProps> =>
   api({
-    operationName: "GetAnimeById",
-    query: `query GetAnimeById($getAnimeByIdId: Int!) {  
-      getAnimeById(id: $getAnimeByIdId) {
-        ${animeSchema}
+    operationName: "GetSeriesById",
+    query: `query GetSeriesById($getSeriesByIdId: Int!) {  
+      getSeriesById(id: $getSeriesByIdId) {
+        ${seriesSchema}
         universe {
           ${universeSchema}
         }
@@ -57,16 +59,16 @@ export const getAnimeById = (id: number): Promise<AnimeFullProps> =>
       }
     }`,
     variables: {
-      getAnimeByIdId: id,
+      getSeriesByIdId: id,
     },
   });
 
-export const getAnimeByTitle = (title: string): Promise<AnimeFullProps> =>
+export const getSeriesByTitle = (title: string): Promise<SeriesFullProps> =>
   api({
-    operationName: "GetAnimeByTitle",
-    query: `query GetAnimeByTitle($getAnimeByTitleTitle: String!) {  
-      getAnimeByTitle(title: $getAnimeByTitleTitle) {
-        ${animeSchema}
+    operationName: "GetSeriesByTitle",
+    query: `query GetSeriesByTitle($getSeriesByTitleTitle: String!) {  
+      getSeriesByTitle(title: $getSeriesByTitleTitle) {
+        ${seriesSchema}
         universe {
           ${universeSchema}
         }
@@ -91,6 +93,6 @@ export const getAnimeByTitle = (title: string): Promise<AnimeFullProps> =>
       }
     }`,
     variables: {
-      getAnimeByTitleTitle: title,
+      getSeriesByTitleTitle: title,
     },
   });

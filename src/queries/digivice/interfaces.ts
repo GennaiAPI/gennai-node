@@ -1,6 +1,6 @@
-import { AnimeBasicProps } from "../anime/interfaces";
 import { CharacterBasicProps } from "../character/interfaces";
 import { MovieBasicProps } from "../movie/interfaces";
+import { SeriesBasicProps } from "../series/interfaces";
 
 export const digiviceSchema = `
   id
@@ -19,7 +19,7 @@ export interface DigiviceFullProps {
   type: DigiviceType;
   colors: string[];
   digiDestined: CharacterBasicProps;
-  animes: AnimeBasicProps[];
+  series: SeriesBasicProps[];
   movies: MovieBasicProps[];
 }
 

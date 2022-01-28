@@ -6,21 +6,21 @@ import { DigiviceBasicProps } from "../digivice/interfaces";
 import { EpisodeBasicProps } from "../episode/interfaces";
 import { UniverseBasicProps } from "../universe/interfaces";
 
-export const animeSchema = `
+export const seriesSchema = `
   id
   title
   synopsis
   originalAirDate
 `;
 
-export interface AnimeBasicProps {
+export interface SeriesBasicProps {
   id: number;
   title: string;
   synopsis: string;
   originalAirDate: Date;
 }
 
-export interface AnimeFullProps {
+export interface SeriesFullProps {
   id: number;
   title: string;
   synopsis: string;

@@ -5,7 +5,6 @@ import {
   digimonSchema,
 } from "./interfaces";
 
-import { animeSchema } from "../anime/interfaces";
 import api from "../../api";
 import { attributeSchema } from "../attribute/interfaces";
 import { digimentalSchema } from "../digimental/interfaces";
@@ -13,6 +12,7 @@ import { episodeSchema } from "../episode/interfaces";
 import { fieldSchema } from "../field/interfaces";
 import { movieSchema } from "../movie/interfaces";
 import { rankSchema } from "../rank/interfaces";
+import { seriesSchema } from "../series/interfaces";
 import { typeSchema } from "../type/interfaces";
 
 export const getDigimons = (
@@ -58,8 +58,8 @@ export const getDigimonById = (id: number): Promise<DigimonFullProps> =>
         fields {
           ${fieldSchema}
         }
-        animes {
-          ${animeSchema}
+        series {
+          ${seriesSchema}
         }
         episodes {
           ${episodeSchema}
@@ -105,8 +105,8 @@ export const getDigimonByName = (name: string): Promise<DigimonFullProps> =>
         fields {
           ${fieldSchema}
         }
-        animes {
-          ${animeSchema}
+        series {
+          ${seriesSchema}
         }
         episodes {
           ${episodeSchema}

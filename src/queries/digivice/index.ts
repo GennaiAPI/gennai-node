@@ -6,10 +6,10 @@ import {
   digiviceSchema,
 } from "./interfaces";
 
-import { animeSchema } from "../anime/interfaces";
 import api from "../../api";
 import { characterSchema } from "../character/interfaces";
 import { movieSchema } from "../movie/interfaces";
+import { seriesSchema } from "../series/interfaces";
 
 export const getDigivices = (
   options?: OptionsProps
@@ -35,8 +35,8 @@ export const getDigiviceById = (id: number): Promise<DigiviceFullProps> =>
         digiDestined {
           ${characterSchema}
         }
-        animes {
-          ${animeSchema}
+        series {
+          ${seriesSchema}
         }
         movies {
           ${movieSchema}
@@ -60,8 +60,8 @@ export const getDigivicesByType = (
         digiDestined {
           ${characterSchema}
         }
-        animes {
-          ${animeSchema}
+        series {
+          ${seriesSchema}
         }
         movies {
           ${movieSchema}

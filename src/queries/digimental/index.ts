@@ -5,12 +5,12 @@ import {
   digimentalSchema,
 } from "./interfaces";
 
-import { animeSchema } from "../anime/interfaces";
 import api from "../../api";
 import { characterSchema } from "../character/interfaces";
 import { crestSchema } from "../crest/interfaces";
 import { digimonSchema } from "../digimon/interfaces";
 import { movieSchema } from "../movie/interfaces";
+import { seriesSchema } from "../series/interfaces";
 
 export const getDigimentals = (
   options?: OptionsProps
@@ -42,8 +42,8 @@ export const getDigimentalById = (id: number): Promise<DigimentalFullProps> =>
         digimons {
           ${digimonSchema}
         }
-        animes {
-          ${animeSchema}
+        series {
+          ${seriesSchema}
         }
         movies {
           ${movieSchema}
@@ -72,8 +72,8 @@ export const getDigimentalByName = (
         digimons {
           ${digimonSchema}
         }
-        animes {
-          ${animeSchema}
+        series {
+          ${seriesSchema}
         }
         movies {
           ${movieSchema}

@@ -5,10 +5,10 @@ import {
   universeSchema,
 } from "./interfaces";
 
-import { animeSchema } from "../anime/interfaces";
 import api from "../../api";
 import { characterSchema } from "../character/interfaces";
 import { movieSchema } from "../movie/interfaces";
+import { seriesSchema } from "../series/interfaces";
 
 export const getUniverses = (
   options?: OptionsProps
@@ -31,8 +31,8 @@ export const getUniverseById = (id: number): Promise<UniverseFullProps> =>
     query: `query GetUniverseById($getUniverseByIdId: Int!) {  
       getUniverseById(id: $getUniverseByIdId) {
         ${universeSchema}
-        animes {
-          ${animeSchema}
+        series {
+          ${seriesSchema}
         }
         movies {
           ${movieSchema}
@@ -53,8 +53,8 @@ export const getUniverseByName = (name: string): Promise<UniverseFullProps> =>
     query: `query GetUniverseByName($getUniverseByNameName: String!) {  
       getUniverseByName(name: $getUniverseByNameName) {
         ${universeSchema}
-        animes {
-          ${animeSchema}
+        series {
+          ${seriesSchema}
         }
         movies {
           ${movieSchema}

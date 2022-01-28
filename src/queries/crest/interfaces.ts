@@ -1,7 +1,7 @@
-import { AnimeBasicProps } from "../anime/interfaces";
 import { CharacterBasicProps } from "../character/interfaces";
 import { DigimentalBasicProps } from "../digimental/interfaces";
 import { MovieBasicProps } from "../movie/interfaces";
+import { SeriesBasicProps } from "../series/interfaces";
 
 export const crestSchema = `
   id
@@ -21,7 +21,7 @@ export interface CrestFullProps {
   description: string;
   digimental: DigimentalBasicProps;
   digiDestineds: CharacterBasicProps[];
-  animes: AnimeBasicProps[];
+  series: SeriesBasicProps[];
   movies: MovieBasicProps[];
 }
 
