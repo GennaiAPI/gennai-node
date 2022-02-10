@@ -46,7 +46,11 @@ import {
   getSpiritsByElement,
 } from "./queries/spirit";
 import { getTypeById, getTypeByName, getTypes } from "./queries/type";
-import { getUniverseById, getUniverseByName } from "./queries/universe";
+import {
+  getUniverseById,
+  getUniverseByName,
+  getUniverses,
+} from "./queries/universe";
 
 export {
   getSeriesById,
@@ -95,4 +99,5 @@ export {
   getSpiritsByElement,
   getUniverseById,
   getUniverseByName,
+  getUniverses,
 };
