@@ -1,6 +1,4 @@
 import { CharacterBasicProps } from "../character/interfaces";
-import { MovieBasicProps } from "../movie/interfaces";
-import { SeriesBasicProps } from "../series/interfaces";
 
 export const digiviceSchema = `
   id
@@ -10,17 +8,15 @@ export const digiviceSchema = `
 
 export interface DigiviceBasicProps {
   id: number;
-  type: DigiviceType;
   colors: string[];
+  type: DigiviceType;
 }
 
 export interface DigiviceFullProps {
   id: number;
-  type: DigiviceType;
   colors: string[];
+  type: DigiviceType;
   digiDestined: CharacterBasicProps;
-  series: SeriesBasicProps[];
-  movies: MovieBasicProps[];
 }
 
 export interface OptionsProps {
@@ -33,4 +29,10 @@ export interface OptionsProps {
 export enum DigiviceType {
   CLASSIC,
   D_3,
+  D_ARK,
+  D_SCANNER,
+  IC,
+  BURST,
+  DARK,
+  BIO_HYBRID,
 }

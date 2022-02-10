@@ -35,26 +35,17 @@ export const getSeriesById = (id: number): Promise<SeriesFullProps> =>
     query: `query GetSeriesById($id: Int!) {  
       getSeriesById(id: $id) {
         ${seriesSchema}
-        universe {
-          ${universeSchema}
-        }
-        crests {
-          ${crestSchema}
-        }
-        digimentals {
-          ${digimentalSchema}
-        }
         episodes {
           ${episodeSchema}
         }
         digimons {
           ${digimonSchema}
         }
-        digivices {
-          ${digiviceSchema}
-        }
         characters {
           ${characterSchema}
+        }
+        universe {
+          ${universeSchema}
         }
       }
     }`,
@@ -69,26 +60,17 @@ export const getSeriesByTitle = (title: string): Promise<SeriesFullProps> =>
     query: `query GetSeriesByTitle($title: String!) {  
       getSeriesByTitle(title: $title) {
         ${seriesSchema}
-        universe {
-          ${universeSchema}
-        }
-        crests {
-          ${crestSchema}
-        }
-        digimentals {
-          ${digimentalSchema}
-        }
         episodes {
           ${episodeSchema}
         }
         digimons {
           ${digimonSchema}
         }
-        digivices {
-          ${digiviceSchema}
-        }
         characters {
           ${characterSchema}
+        }
+        universe {
+          ${universeSchema}
         }
       }
     }`,

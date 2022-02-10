@@ -1,8 +1,5 @@
 import { CharacterBasicProps } from "../character/interfaces";
-import { CrestBasicProps } from "../crest/interfaces";
-import { DigimentalBasicProps } from "../digimental/interfaces";
 import { DigimonBasicProps } from "../digimon/interfaces";
-import { DigiviceBasicProps } from "../digivice/interfaces";
 import { UniverseBasicProps } from "../universe/interfaces";
 
 export const movieSchema = `
@@ -24,12 +21,9 @@ export interface MovieFullProps {
   title: string;
   synopsis: string;
   originalAirDate: Date;
-  universe: UniverseBasicProps;
-  characters: CharacterBasicProps[];
   digimons: DigimonBasicProps[];
-  digivices: DigiviceBasicProps[];
-  crests: CrestBasicProps[];
-  digimentals: DigimentalBasicProps[];
+  characters: CharacterBasicProps[];
+  universe: UniverseBasicProps;
 }
 
 export interface OptionsProps {

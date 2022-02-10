@@ -36,12 +36,6 @@ export const getCrestById = (id: number): Promise<CrestFullProps> =>
         digiDestineds {
           ${characterSchema}
         }
-        series {
-          ${seriesSchema}
-        }
-        movies {
-          ${movieSchema}
-        }
       }
     }`,
     variables: {
@@ -60,12 +54,6 @@ export const getCrestByName = (name: string): Promise<CrestFullProps> =>
         }
         digiDestineds {
           ${characterSchema}
-        }
-        series {
-          ${seriesSchema}
-        }
-        movies {
-          ${movieSchema}
         }
       }
     }`,

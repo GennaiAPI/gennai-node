@@ -21,9 +21,9 @@ export interface EpisodeFullProps {
   title: string;
   synopsis: string;
   originalAirDate: Date;
-  series: SeriesBasicProps;
-  characters: CharacterBasicProps[];
   digimons: DigimonBasicProps[];
+  characters: CharacterBasicProps[];
+  series: SeriesBasicProps;
 }
 
 export interface OptionsProps {

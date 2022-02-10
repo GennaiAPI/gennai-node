@@ -7,10 +7,7 @@ import {
 
 import api from "../../api";
 import { characterSchema } from "../character/interfaces";
-import { crestSchema } from "../crest/interfaces";
-import { digimentalSchema } from "../digimental/interfaces";
 import { digimonSchema } from "../digimon/interfaces";
-import { digiviceSchema } from "../digivice/interfaces";
 import { universeSchema } from "../universe/interfaces";
 
 export const getMovies = (options?: OptionsProps): Promise<MovieBasicProps[]> =>
@@ -32,23 +29,14 @@ export const getMovieById = (id: number): Promise<MovieFullProps> =>
     query: `query GetMovieById($id: Int!) {  
       getMovieById(id: $id) {
         ${movieSchema}
-        universe {
-          ${universeSchema}
+        digimons {
+          ${digimonSchema}
         }
         characters {
           ${characterSchema}
         }
-        digimons {
-          ${digimonSchema}
-        }
-        digivices {
-          ${digiviceSchema}
-        }
-        crests {
-          ${crestSchema}
-        }
-        digimentals {
-          ${digimentalSchema}
+        universe {
+          ${universeSchema}
         }
       }
     }`,
@@ -63,23 +51,14 @@ export const getMovieByTitle = (title: string): Promise<MovieFullProps> =>
     query: `query GetMovieByTitle($title: String!) {  
       getMovieByTitle(title: $title) {
         ${movieSchema}
-        universe {
-          ${universeSchema}
+        digimons {
+          ${digimonSchema}
         }
         characters {
           ${characterSchema}
         }
-        digimons {
-          ${digimonSchema}
-        }
-        digivices {
-          ${digiviceSchema}
-        }
-        crests {
-          ${crestSchema}
-        }
-        digimentals {
-          ${digimentalSchema}
+        universe {
+          ${universeSchema}
         }
       }
     }`,

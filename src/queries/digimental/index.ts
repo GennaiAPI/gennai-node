@@ -36,17 +36,11 @@ export const getDigimentalById = (id: number): Promise<DigimentalFullProps> =>
         crest {
           ${crestSchema}
         }
-        digiDestined {
-          ${characterSchema}
-        }
-        digimons {
+        digimon {
           ${digimonSchema}
         }
-        series {
-          ${seriesSchema}
-        }
-        movies {
-          ${movieSchema}
+        digiDestined {
+          ${characterSchema}
         }
       }
     }`,
@@ -66,17 +60,11 @@ export const getDigimentalByName = (
         crest {
           ${crestSchema}
         }
-        digiDestined {
-          ${characterSchema}
-        }
-        digimons {
+        digimon {
           ${digimonSchema}
         }
-        series {
-          ${seriesSchema}
-        }
-        movies {
-          ${movieSchema}
+        digiDestined {
+          ${characterSchema}
         }
       }
     }`,

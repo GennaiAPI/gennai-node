@@ -1,10 +1,13 @@
 import { AttributeBasicProps } from "../attribute/interfaces";
+import { CharacterBasicProps } from "../character/interfaces";
 import { DigimentalBasicProps } from "../digimental/interfaces";
+import { DigimonGroupBasicProps } from "../digimonGroup/interfaces";
 import { EpisodeBasicProps } from "../episode/interfaces";
 import { FieldBasicProps } from "../field/interfaces";
 import { MovieBasicProps } from "../movie/interfaces";
 import { RankBasicProps } from "../rank/interfaces";
 import { SeriesBasicProps } from "../series/interfaces";
+import { SpiritBasicProps } from "../spirit/interfaces";
 import { TypeBasicProps } from "../type/interfaces";
 
 export const digimonSchema = `
@@ -30,19 +33,22 @@ export interface DigimonFullProps {
   isJogress: boolean;
   hasXAntibody: boolean;
   rank: RankBasicProps;
-  type: TypeBasicProps;
   attribute: AttributeBasicProps;
+  type: TypeBasicProps;
   digimental: DigimentalBasicProps;
-  otherNames: DigimonNameProps[];
-  prior: DigimonBasicProps[];
-  next: DigimonBasicProps[];
-  fields: FieldBasicProps[];
+  movies: MovieBasicProps[];
   series: SeriesBasicProps[];
   episodes: EpisodeBasicProps[];
-  movies: MovieBasicProps[];
+  fields: FieldBasicProps[];
+  spirits: SpiritBasicProps[];
+  partners: CharacterBasicProps[];
+  previous: DigimonBasicProps[];
+  next: DigimonBasicProps[];
+  groups: DigimonGroupBasicProps[];
+  otherNames: DigimonNameProps[];
 }
 
-interface DigimonNameProps {
+export interface DigimonNameProps {
   id: number;
   lang: string;
   name: string;

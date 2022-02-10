@@ -1,9 +1,11 @@
 import { CrestBasicProps } from "../crest/interfaces";
 import { DigimentalBasicProps } from "../digimental/interfaces";
+import { DigimonBasicProps } from "../digimon/interfaces";
 import { DigiviceBasicProps } from "../digivice/interfaces";
 import { EpisodeBasicProps } from "../episode/interfaces";
 import { MovieBasicProps } from "../movie/interfaces";
 import { SeriesBasicProps } from "../series/interfaces";
+import { SpiritBasicProps } from "../spirit/interfaces";
 import { UniverseBasicProps } from "../universe/interfaces";
 
 export const characterSchema = `
@@ -22,13 +24,15 @@ export interface CharacterFullProps {
   id: number;
   name: string;
   isDigiDestined: boolean;
-  crests: CrestBasicProps[];
-  digimentals: DigimentalBasicProps[];
-  series: SeriesBasicProps[];
-  digivices: DigiviceBasicProps[];
-  universes: UniverseBasicProps[];
-  episodes: EpisodeBasicProps[];
   movies: MovieBasicProps[];
+  series: SeriesBasicProps[];
+  episodes: EpisodeBasicProps[];
+  crests: CrestBasicProps[];
+  spirits: SpiritBasicProps[];
+  digivices: DigiviceBasicProps[];
+  digimentals: DigimentalBasicProps[];
+  partners: DigimonBasicProps[];
+  universes: UniverseBasicProps[];
 }
 
 export interface OptionsProps {

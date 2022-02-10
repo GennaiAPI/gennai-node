@@ -35,12 +35,6 @@ export const getDigiviceById = (id: number): Promise<DigiviceFullProps> =>
         digiDestined {
           ${characterSchema}
         }
-        series {
-          ${seriesSchema}
-        }
-        movies {
-          ${movieSchema}
-        }
       }
     }`,
     variables: {
@@ -59,12 +53,6 @@ export const getDigivicesByType = (
         ${digiviceSchema}
         digiDestined {
           ${characterSchema}
-        }
-        series {
-          ${seriesSchema}
-        }
-        movies {
-          ${movieSchema}
         }
       }
     }`,

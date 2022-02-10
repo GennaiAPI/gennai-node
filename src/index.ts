@@ -34,16 +34,22 @@ import { getFieldById, getFieldByName, getFields } from "./queries/field";
 import { getMovieById, getMovieByTitle, getMovies } from "./queries/movie";
 import { getRankById, getRankByName, getRanks } from "./queries/rank";
 import { getSeries, getSeriesById, getSeriesByTitle } from "./queries/series";
+import {
+  getSpiritById,
+  getSpiritElements,
+  getSpirits,
+  getSpiritsByElement,
+} from "./queries/spirit";
 import { getTypeById, getTypeByName, getTypes } from "./queries/type";
 import { getUniverseById, getUniverseByName } from "./queries/universe";
 
 export {
   getSeriesById,
-  getSeriesByTitle,
-  getSeries,
   getAttributeById,
   getAttributeByName,
   getAttributes,
+  getSeriesByTitle,
+  getSeries,
   getCharacterById,
   getCharacterByName,
   getCharacters,
@@ -75,6 +81,10 @@ export {
   getRankById,
   getRankByName,
   getRanks,
+  getSpiritById,
+  getSpiritElements,
+  getSpirits,
+  getSpiritsByElement,
   getUniverseById,
   getUniverseByName,
 };

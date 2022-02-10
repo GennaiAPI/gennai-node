@@ -31,14 +31,14 @@ export const getEpisodeById = (id: number): Promise<EpisodeFullProps> =>
     query: `query GetEpisodeById($id: Int!) {  
       getEpisodeById(id: $id) {
         ${episodeSchema}
-        series {
-          ${seriesSchema}
+        digimons {
+          ${digimonSchema}
         }
         characters {
           ${characterSchema}
         }
-        digimons {
-          ${digimonSchema}
+        series {
+          ${seriesSchema}
         }
       }
     }`,
@@ -53,14 +53,14 @@ export const getEpisodeByTitle = (title: string): Promise<EpisodeFullProps> =>
     query: `query GetEpisodeByTitle($title: String!) {  
       getEpisodeByTitle(title: $title) {
         ${episodeSchema}
-        series {
-          ${seriesSchema}
+        digimons {
+          ${digimonSchema}
         }
         characters {
           ${characterSchema}
         }
-        digimons {
-          ${digimonSchema}
+        series {
+          ${seriesSchema}
         }
       }
     }`,

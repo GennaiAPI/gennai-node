@@ -8,10 +8,12 @@ import {
 import api from "../../api";
 import { crestSchema } from "../crest/interfaces";
 import { digimentalSchema } from "../digimental/interfaces";
+import { digimonSchema } from "../digimon/interfaces";
 import { digiviceSchema } from "../digivice/interfaces";
 import { episodeSchema } from "../episode/interfaces";
 import { movieSchema } from "../movie/interfaces";
 import { seriesSchema } from "../series/interfaces";
+import { spiritSchema } from "../spirit/interfaces";
 import { universeSchema } from "../universe/interfaces";
 
 export const getCharacters = (
@@ -35,26 +37,32 @@ export const getCharacterById = (id: number): Promise<CharacterFullProps> =>
     query: `query GetCharacterById($id: Int!) {  
       getCharacterById(id: $id) {
         ${characterSchema}
+        movies {
+          ${movieSchema}
+        }
         series {
           ${seriesSchema}
-        }
-        digivices {
-          ${digiviceSchema}
-        }
-        crests {
-          ${crestSchema}
-        }
-        digimentals {
-          ${digimentalSchema}
-        }
-        universes {
-          ${universeSchema}
         }
         episodes {
           ${episodeSchema}
         }
-        movies {
-          ${movieSchema}
+        crests {
+          ${crestSchema}
+        }
+        spirits {
+          ${spiritSchema}
+        }
+        digivices {
+          ${digiviceSchema}
+        }
+        digimentals {
+          ${digimentalSchema}
+        }
+        partners {
+          ${digimonSchema}
+        }
+        universes {
+          ${universeSchema}
         }
       }
     }`,
@@ -69,26 +77,32 @@ export const getCharacterByName = (name: string): Promise<CharacterFullProps> =>
     query: `query GetCharacterByName($name: String!) {  
       getCharacterByName(name: $name) {
         ${characterSchema}
+        movies {
+          ${movieSchema}
+        }
         series {
           ${seriesSchema}
-        }
-        digivices {
-          ${digiviceSchema}
-        }
-        crests {
-          ${crestSchema}
-        }
-        digimentals {
-          ${digimentalSchema}
-        }
-        universes {
-          ${universeSchema}
         }
         episodes {
           ${episodeSchema}
         }
-        movies {
-          ${movieSchema}
+        crests {
+          ${crestSchema}
+        }
+        spirits {
+          ${spiritSchema}
+        }
+        digivices {
+          ${digiviceSchema}
+        }
+        digimentals {
+          ${digimentalSchema}
+        }
+        partners {
+          ${digimonSchema}
+        }
+        universes {
+          ${universeSchema}
         }
       }
     }`,

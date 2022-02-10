@@ -21,8 +21,6 @@ export interface CrestFullProps {
   description: string;
   digimental: DigimentalBasicProps;
   digiDestineds: CharacterBasicProps[];
-  series: SeriesBasicProps[];
-  movies: MovieBasicProps[];
 }
 
 export interface OptionsProps {
