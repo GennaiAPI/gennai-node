@@ -20,6 +20,11 @@ import {
   getDigimons,
 } from "./queries/digimon";
 import {
+  getDigimonGroupById,
+  getDigimonGroupByName,
+  getDigimonGroups,
+} from "./queries/digimonGroup";
+import {
   getDigiviceById,
   getDigiviceTypes,
   getDigivices,
@@ -62,6 +67,9 @@ export {
   getDigimonById,
   getDigimonByName,
   getDigimons,
+  getDigimonGroupById,
+  getDigimonGroupByName,
+  getDigimonGroups,
   getDigiviceById,
   getDigiviceTypes,
   getDigivices,
