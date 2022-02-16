@@ -1,3 +1,6 @@
+
+![Gennai Node](./gennainode-logo.svg)
+
 # Gennai Node
 
 Gennai Node is a **modular** library created to facilitate retrieving data from the [Gennai API](https://github.com/GuiPretto/gennai-api) in a NodeJS enviroment utilizing **promises**.
