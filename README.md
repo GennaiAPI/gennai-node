@@ -3,7 +3,7 @@
 
 # Gennai Node
 
-Gennai Node is a **modular** library created to facilitate retrieving data from the [Gennai API](https://github.com/GuiPretto/gennai-api) in a NodeJS enviroment utilizing **promises**.
+Gennai Node is a **modular** library created to facilitate retrieving data from the [Gennai API](https://github.com/GennaiAPI/gennai-api) in a NodeJS enviroment utilizing **promises**.
 
 ## Installation
 
@@ -83,4 +83,4 @@ const digimonList = await getDigimons({
 
 ## Endpoints
 
-For a full list of endpoints and structures check the official [API documentation]().
+For a full list of endpoints and structures check the official [API documentation](https://gennai-api.vercel.app/).
