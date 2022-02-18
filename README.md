@@ -83,4 +83,4 @@ const digimonList = await getDigimons({
 
 ## Endpoints
 
-For a full list of endpoints and structures check the official [API documentation](https://gennai-api.vercel.app/).
+For a full list of endpoints and structures check the official [API documentation](https://www.gennaiapi.com/).
